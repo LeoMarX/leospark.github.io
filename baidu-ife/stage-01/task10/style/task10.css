@@ -12,33 +12,32 @@
 	/* wrap层居中 */
 	display: flex;
 	padding: 20px;
-	/*flex-direction: row;*/
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
 }
 
 #one {
-	width: 150px;
-	height: 120px;
+	width: 146px;
+	height: 116px;
 	border: 2px solid #f00;
 }
 
 #two {
-	width: 150px;
-	height: 100px;
+	width: 146px;
+	height: 116px;
 	border: 2px solid #f00;
 }
 
 #three {
-	width: 150px;
-	height: 40px;
+	width: 146px;
+	height: 116px;
 	border: 2px solid #f00;
 }
 
 #four {
-	width: 150px;
-	height: 200px;
+	width: 146px;
+	height: 116px;
 	border: 2px solid #0f0;
 }
 
