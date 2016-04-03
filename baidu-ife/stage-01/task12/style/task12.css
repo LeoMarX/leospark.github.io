@@ -1,0 +1,110 @@
+#wrap {
+	width: 800px;
+	margin: 0 auto;
+	padding: 5em;
+}
+
+/* ----- 表格 -----*/
+table {
+	font: 16px Helvetica,Arial,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","tohoma,sans-serif";
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+	margin: 0 auto;
+}
+
+table:hover {
+	transform: rotateY(180deg);
+	transition-delay: 2s;
+	transition-duration: 3s;
+	transition-timing-function: ease;
+}
+
+thead tr:nth-child(1) {
+	background-color: #000;
+	color: #fff;
+	text-align: left;
+}
+
+tr:nth-child(even) {
+	background: #D1CDCD;
+}
+
+tr:nth-child(odd) {
+	background: #F8F8F8;
+}
+
+td {
+	padding: 0px 3px;
+}
+
+tr:nth-child(1),tr:nth-child(2),tr:nth-child(3) td {
+	color: #EE4F4F;
+}
+
+/* ----- 输入框 -----*/
+#textbox {
+	margin: 2em auto;
+	width: 280px;
+}
+
+input {
+	width: 150px;
+	transition-duration: 1.5s;
+}
+
+input:focus {
+	width: 250px;
+	transition-delay: 0.2s;
+	transition-duration: 3s;
+}
+
+/* ----- Banner图轮流播放 -----*/
+#slider {
+	margin: 0 auto;
+	width: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	background-color: rgba(190,190,190,0.2);
+}
+
+li {
+	background-color: red;
+	list-style: none;
+	height: 200px;
+	width: 10px;
+	float: right;
+}
+
+#slider div {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+a {
+	width: 30px;
+	text-align: center;
+	padding: 5px 0px;
+	text-decoration: none;
+	color: #f0f0f0;
+	display: inline-block;
+	background-color: rgba(205,205,205,0.8);
+}
+
+a:nth-child(2) :target{
+	background-color: red;
+	width: 250px;
+	transition: width 2s, transform 2s;
+}
+
+@keyframes myfirst
+	{
+	0% {background:red; width: 0px;}
+	50%  {background:red; width: 150px;}
+	100% {background:red; width: 300px;}
+	}
