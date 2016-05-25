@@ -1,110 +1,97 @@
 #wrap {
-	width: 800px;
-	margin: 0 auto;
-	padding: 5em;
-}
-
-/* ----- 表格 -----*/
-table {
-	font: 16px Helvetica,Arial,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","tohoma,sans-serif";
-	transition-duration: 2s;
-	transition-timing-function: ease-in-out;
+	width: 80rem;
 	margin: 0 auto;
 }
 
-table:hover {
-	transform: rotateY(180deg);
-	transition-delay: 2s;
-	transition-duration: 3s;
-	transition-timing-function: ease;
+/*----- 表格 -----*/
+#one table {
+	font: 16px sans-serif;
+	margin: 0 auto;
 }
 
-thead tr:nth-child(1) {
+#one thead {
 	background-color: #000;
-	color: #fff;
+	color: #FFF;
 	text-align: left;
 }
 
-tr:nth-child(even) {
-	background: #D1CDCD;
+#one tbody tr:nth-child(even) {
+	background-color: #C0C0C0;
 }
 
-tr:nth-child(odd) {
-	background: #F8F8F8;
+tbody tr:nth-child(1),
+tbody tr:nth-child(2),
+tbody tr:nth-child(3) {
+	color: #F91616;
 }
 
-td {
-	padding: 0px 3px;
+/*----- 输入框 -----*/
+#two input {
+	width: 10rem;
+	margin: 3rem 33rem;
+	transition-property: width;
+	transition-duration: 1.5S;
 }
 
-tr:nth-child(1),tr:nth-child(2),tr:nth-child(3) td {
-	color: #EE4F4F;
+#two input:focus {
+	width: 13rem;
 }
 
-/* ----- 输入框 -----*/
-#textbox {
-	margin: 2em auto;
-	width: 280px;
-}
-
-input {
-	width: 150px;
-	transition-duration: 1.5s;
-}
-
-input:focus {
-	width: 250px;
-	transition-delay: 0.2s;
-	transition-duration: 3s;
-}
-
-/* ----- Banner图轮流播放 -----*/
-#slider {
-	margin: 0 auto;
-	width: 300px;
-	overflow: hidden;
+/*----- 轮播动画 -----*/
+#three {
+	width: 15rem;		
+	height: 10rem;
+	margin: 3rem auto;
+	border: 0.1rem;
+	box-shadow: 0 0 0.5rem black;
 	position: relative;
+	overflow: hidden;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-	background-color: rgba(190,190,190,0.2);
-}
-
-li {
+#bg {
+	height: 100%;
+	width: 100%;
+	position: relative;
 	background-color: red;
-	list-style: none;
-	height: 200px;
-	width: 10px;
-	float: right;
 }
 
-#slider div {
+#bg1 {
+	background: red;
+	width: 0;
+	height: 100%;
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	transition: width 2S;
 }
 
-a {
-	width: 30px;
-	text-align: center;
-	padding: 5px 0px;
+#bg2 {
+	background: blue;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	transition: width 2S;
+}
+
+#bg3 {
+	background: green;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	transition: width 2S;
+}
+
+#bg1:target, #bg2:target, #bg3:target {
+	width: 30rem;
+}
+
+#contrl_wrap {
+	position: absolute;
+	bottom: 0.4rem;
+	right: 0.3rem;
+}
+
+#three a {
+	background-color: rgba(255,255,255,0.3);
 	text-decoration: none;
-	color: #f0f0f0;
-	display: inline-block;
-	background-color: rgba(205,205,205,0.8);
+	color: white;
+	padding: 0.1rem 0.5rem;
 }
-
-a:nth-child(2) :target{
-	background-color: red;
-	width: 250px;
-	transition: width 2s, transform 2s;
-}
-
-@keyframes myfirst
-	{
-	0% {background:red; width: 0px;}
-	50%  {background:red; width: 150px;}
-	100% {background:red; width: 300px;}
-	}
