@@ -1,0 +1,802 @@
+* {
+	margin: 0;
+	font-family: "PingFang SC","微软雅黑", sans-serif;
+}
+
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+li {
+	display: inline-block;
+}
+
+body {
+	width: 100%;
+	background-color: #FAFAFA;
+}
+
+#wrap {
+	/*min-width: 1280px;
+	max-width: 1568px;*/
+	width: 1280px;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+/*
+@media (min-width: 1280px) {
+	#wrap {
+		max-width: 1568px;
+		margin: 0 auto;
+		background-color: #FFF;
+	}
+
+	body {
+	width: 100%;
+	background-color: #E6E6E6;
+	}
+}*/
+
+/*----- 顶栏 -----*/
+nav {
+	width: 100%;
+	height: 55px;
+	position: relative;
+}
+
+nav h1, nav ul, nav a, nav span {
+	display: inline-block;
+}
+
+#new_world {
+	height: 55px;
+	margin-left: 55px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#new_world img {
+	width: 31px;
+	margin: 12px;
+	float: left;
+}
+
+#new_world span {
+	line-height: 31px;
+	margin: 12px 0px;
+}
+
+nav ul {
+	font-size: 1em;
+	float: right;
+	margin-right: 140px;
+}
+
+nav li a {
+	color: #A0A0A0;
+	padding: 14px 20px;
+	transition: 0.2S;
+	transition-property: color,text-shadow,background;
+}
+
+nav li:first-child a {
+	color: #EB8F8F;
+	border-bottom: solid 5px #E86464;
+	font-weight: bold;
+}
+
+ nav li a:hover, #login:hover {
+ 	color: #E65050;
+ 	text-shadow: 0px 0px 1px #E3E2E2;
+ 	background: #FAFAFA;
+ }
+
+#login {
+	height: 55px;
+	position: absolute;
+	right: 0px;
+	margin-right: 65px;
+	color: #EB8F8F;
+	font-weight: bold;
+	transition: 0.2S;
+	transition-property: color,text-shadow,background;
+}
+
+#login img {
+	height: 18px;
+	padding: 18px 3px;
+	float: left;
+}
+
+#login span {
+	font-size: 16px;
+	padding: 16px 2px;
+}
+
+/*----- 第一部分 -----*/
+#one {
+	background-image: url(../images/section1.jpg);
+	background-size: 100%;
+	height: 695px;
+	color: #FFF;
+}
+#one_wrap{
+	height: 695px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
+}
+#one h1 {
+	font-size: 60px;
+	padding: 230px 0px 0px 115px;
+}
+
+#one p {
+	font-size: 20px;
+	white-space: pre-line;
+	padding: 10px 120px;
+	color:rgba(250,250,250,0.9);
+}
+
+#one a {
+	display: inline-block;
+	margin: 65px 125px;
+	background-color: rgba(231,79,77,0.9);
+	font-size: 24px;
+	color: #FFF;
+	padding: 15px 100px;
+	transition: 0.2S;
+	transition-property: color, background-color;
+}
+
+#one a:hover {
+	color: rgba(255,255,255,0.9);
+	background-color: rgba(231,79,77,0.85);
+}
+
+/*----- 第二部分 -----*/
+#two {
+	height: 250px;
+}
+#two ul {
+	padding: 0;
+}
+
+#two li {
+	width: 25%;
+	float: left;
+	font-size: 14px;
+	color: #A0A0A0;
+}
+
+#two img {
+	height: 40px;
+	display: block;
+	margin: 45px auto;
+}
+
+#two span {
+	display: block;
+	white-space: pre-wrap;
+	text-align: center;
+	padding: 0px 80px 10px;
+	border-right: solid 2px #A0A0A0;
+}
+
+#two li:last-child span {
+	border-right: 0px;
+}
+
+/*----- 第三部分 ----*/
+#three {
+	height: 350px;
+	background-color: #EDEDED;
+}
+
+#three img {
+	display: block;
+	padding: 80px 0px 50px;
+	margin: 0 auto;
+}
+
+#three h1 {
+	text-align: center;
+	font-family: "黑体";
+	font-weight: lighter;
+	font-size: 50px;
+	color: #A0A0A0;
+}
+
+/*----- 第四部分 -----*/
+#four {
+	height: 345px;
+	background: url(../images/map.jpg);
+	background-size: cover;
+	color: #FAFAFA;
+	position: relative;
+}
+
+#four_wrap {
+	background: rgba(231,80,77,0.2);
+	height: 100%;
+}
+
+#four h1 {
+	font-size: 26px;
+	font-weight: lighter;
+	padding: 45px 0 0;
+	text-align: center;
+}
+
+#four h1:after {
+	content: "";
+	display: block;
+	width: 35px;
+	height: 2px;
+	margin: 5px auto;
+	background-color: #FAFAFA;
+}
+
+#four p {
+	font-size: 14px;
+	text-align: center;
+}
+
+/*----- 第四部分搜索框 -----*/
+#four form {
+	margin: 50px auto;
+	text-align: center;
+}
+
+.selection_wrap {
+	position: relative;
+	margin: 0 12px;
+	display: inline-block;
+}
+
+.selection {
+	width: 195px;
+	height: 33px;
+	border: 0;
+	padding: 0 25px 0 15px;
+	transition: 0.5S;
+	transition-property: box-shadow;
+}
+
+.dropdown {
+	width: 235px;
+	padding: 0;
+	position: absolute;
+	background: #EDEDED;
+	border: 0;
+	box-shadow: 0px 0px 1px 1px #BF4F49;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.4S;
+}
+
+
+.dropdown li {
+	display: block;
+	color: #A0A0A0;
+	text-align: left;
+	font-size: 16px;
+	padding: 5px 0px;
+}
+
+.dropdown li:hover {
+	background-color: #BF4F49;
+	color: #FFF;
+}
+
+.dropdown li:before {
+	content: "✓";
+	margin: 0 8px;
+	color: #EDEDED;
+}
+
+.dropdown li:hover:before {
+	color: #FFF;
+}
+
+.selection_wrap:after {
+	content: url(../images/arrow2.png);
+	background-color: #BF4F49;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	width: 20px;
+	height: 19px;
+	right: 6px;
+	top: 6px;
+	padding-top: 1px;
+}
+
+.selection_wrap:hover .selection, .selection:focus {
+	box-shadow: 0px 0px 3px 1px #BF4F49;
+	outline: 0;
+}
+
+.selection_wrap:hover .selection:focus + .dropdown {
+	display: block;
+	opacity: 1.0;
+	visibility: visible;
+}
+
+#text_input {
+	display: inline-block;
+	color: #FAFAFA;
+	background-color: #BF4F49;
+	font-size: 16px;
+	height: 35px;
+	letter-spacing: 21px;
+	padding: 0px 70px 0px 90px;
+	border: 0;
+	cursor: pointer;
+	margin: 0px 12px;
+	transition: 0.25S;
+	transition-property: color, background-color;
+}
+
+#text_input:hover {
+	color: rgba(250,250,250,0.85);
+	background-color: rgba(191,79,73,0.85);
+}
+
+/*----- 第五部分 -----*/
+#five {
+	height: 500px;
+	background: #F8F8F8;
+}
+
+#five ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#five li {
+	width: 215px;
+	margin: 50px 20px;
+}
+
+#five img {
+	border: 0;
+	padding: 5px;
+	box-shadow: 0px 0px 3px 1px #EDEDED;
+	transition: box-shadow 0.4S;
+}
+
+#five h2 {
+	font-size: 16px;
+	line-height: 25px;
+	margin-top: 10px;
+	color: #646464;
+	text-align: center;
+	transition: font-size 0.4S, letter-spacing 0.6S, margin-right 0.6S;
+	transition-delay: 0.3S;
+	transition-timing-function: ease-in-out;
+}
+
+#five span {
+	font-size: 14px;
+	color: #A0A0A0;
+	line-height: 35px;
+	text-shadow: 0px 0px 3px #FFF;
+	transition: 0.5S;
+}
+
+#five li:hover img {
+	box-shadow: 1px 1px 5px 5px #EDEDED;
+}
+
+#five li:hover h2{
+	font-size: 20px;
+	letter-spacing: 33px;
+	margin-right: -33px;
+}
+
+#five li:hover span {
+	text-shadow: 0px 0px 3px #E6E6E6;
+}
+
+/*----- 第六部分 -----*/
+#six {
+	height: 565px;
+	position: relative;
+}
+
+.show_on {
+	height: 100%;
+	width: 66%;
+	display: inline-block;
+	background: url(../images/middle_left.jpg) no-repeat;
+	background-size: cover;
+	color: #FFF;
+	float: left;
+	text-align: center;
+}
+
+.show_on h1 {
+	font-size: 50px;
+	font-weight: lighter;
+	margin-top: 135px;
+}
+
+.show_on span {
+	font-size: 150px;
+	line-height: 150px;
+}
+
+.show_on p{
+	font-size: 22px;
+	line-height: 36px;
+}
+
+.choose {
+	position: absolute;
+	right: 0;
+	margin-left: 66%;
+	padding: 150px 70px;
+}
+
+.choose h2 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.choose h2 span:first-child {
+	color: #808080;
+	font-size: 28px;
+	font-weight: lighter;
+	display: inline-block;
+	margin: 5px;	
+	transform: rotate(20deg);
+}
+
+.choose h2 span:last-child {
+	color: rgba(231,79,77,0.9);
+}
+
+.choose p {
+	font-size: 14px;
+	color: #A0A0A0;
+	line-height: 38px;
+	margin: 20px 0px;
+}
+
+.choose p + a {
+	color: #E35C5F;
+	text-align: center;
+	display: block;
+	width: 105px;
+	border: solid 1px #E35C5F;
+	padding: 10px;
+	margin: 10px auto;
+	box-shadow: 0px 0px 3px #E35C5F;
+	transition: opacity 0.3S;
+}
+
+.choose p + a:hover {
+	opacity: 0.7;
+}
+
+.choose ul {
+	text-align: center;
+	padding: 0;
+	margin-top: 20px;
+}
+
+.choose li a {
+	padding: 5px;
+	display: block;
+	border: solid 2px #A0A0A0;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.choose li a:hover {
+	box-shadow: 0px 0px 3px #A0A0A0;
+}
+
+.choose li:first-child a {
+	background: #A0A0A0;
+}
+
+.choose:before, #seven_dis:before {
+	content: "";
+	display: block;
+	border-top: solid 18px transparent;
+	border-right: solid 30px #FFF;
+	border-left: solid 0px transparent;
+	border-bottom: solid 18px transparent;
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -29px;
+	top: 250px;
+}
+
+/*----- 第七部分 -----*/
+#seven {
+	margin: 0;
+	height: 520px;
+	position: relative;
+	overflow: hidden;
+}
+
+.seven_page {
+	width: 33%;
+	height: 100%;
+	display: inline-block;
+	float: left;
+	background-color: #E8504E;
+	padding-top: 170px;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: #EDEDED;
+}
+
+.seven_page p:nth-child(2):after, #eight h2:after {
+	content: "";
+	display: block;
+	width: 28px;
+	height: 2px;
+	margin: 20px auto;
+	background-color: #FAFAFA;
+}
+
+
+.seven_page p a {
+	color: #FFF;
+	text-align: center;
+	display: block;
+	width: 170px;
+	border: solid 1px #EDEDED;
+	padding: 4px 0px;
+	margin: 30px auto;
+	box-shadow: 0px 0px 3px 1px #EDEDED;
+	transition: opacity 0.3S, background 0.3S;
+}
+
+.seven_page p a:hover {
+	opacity: 0.9;
+	background: rgba(255,255,255,0.1);
+}
+
+/*----- 修改#seven 中间部分样式 -----*/
+.seven_page:nth-child(2) {
+	background-color: #FFF;
+	color: #000;
+}
+
+.seven_page:nth-child(2) p:nth-child(2):after {
+	background-color: #A0A0A0;
+}
+
+.seven_page:nth-child(2) p a{
+	color: #E8504E;
+	border: solid 1px #E8504E;
+	box-shadow: 0px 0px 3px #E8504E;
+}
+
+.seven_page:nth-child(2) p a:hover {
+	opacity: 0.7;
+}
+
+/*----- #seven 右侧 -----*/
+#seven_dis {
+	width: 34%;
+	height: 100%;
+	position: absolute;
+	display: inline-block;
+	background: url(../images/train.jpg) no-repeat;
+	background-size: cover;
+}
+
+#seven_dis:before {	
+	/* 复用#six 右侧代码 */
+	transform: rotateY(180deg);
+	left: -1px;
+}
+
+/*----- 第八部分 -----*/
+#eight {
+	padding: 115px 135px;
+	position: relative;
+}
+
+#eight h2 {
+	font-size: 22px;
+	text-align: center;
+}
+
+#eight h2:after {
+	/* 复用#seven 代码 */
+	background-color: #E8504E;
+	margin: 8px auto;
+}
+
+#eight h2 + p {
+	color: #A0A0A0;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 105px;
+}
+
+#eight ul {
+	display: block;
+	width: 300px;
+	padding: 0;
+}
+
+#eight li {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#eight li h3 {
+	color: #211814;
+	font-size: 16px;
+	font-weight: normal;
+	padding-bottom: 16px;
+}
+
+#eight li p, #eight li a {
+	color: #A0A0A0;
+	font-weight: bolder;
+	font-family: "宋体", serif; 
+	font-size: 12px;
+	line-height: 22px;
+	text-align: left;
+}
+
+#eight li a {
+	float: right;
+}
+
+#eight li a:before {
+	content: url(../images/arrow.png);
+	margin: 0 5px;
+}
+
+/*----- #eight 右侧表格 -----*/
+#eight form {
+	width: 640px;
+	position: absolute;
+	right: 135px;
+	top: 310px;
+}
+
+#eight form p {
+	font: bold 14px "宋体";
+	color: #A0A0A0;
+	width: 290px;
+	padding: 10px;
+	background-color: #EDEDED;
+	float: left;
+	margin: 0 0 20px 0;
+}
+
+#eight form p:nth-child(even) {
+	float: right;
+}
+
+#eight form p:hover {
+	color: #000;
+}
+
+#eight form p input {
+	width: 200px;
+	border: 0px;
+	outline: 0;
+	background-color: #EDEDED;
+}
+
+#eight textarea {
+	width: 600px;
+	height: 120px;
+	resize : none;
+	background-color: #EDEDED;
+	padding: 10px 20px;
+	border: 0;
+	outline: 0;
+	margin-bottom: 15px;
+}
+
+#eight textarea::-webkit-input-placeholder {
+	font: bold 14px "宋体";
+}
+
+#eight input[type=submit] {
+	font-size: 16px;
+	width: 100%;
+	border: 0;
+	height: 40px;
+	padding: 0;
+	background-color: #EDEDED;
+	cursor: pointer;
+	transition: opacity 0.2S, color 0.2S;
+}
+
+#eight input[type=submit]:hover {
+	opacity: 0.8;
+	color: #E8504E;
+}
+/*----- 第九部分 -----*/
+#nine {
+	width: 100%;
+	background: #33353E;
+	text-align: center;
+	padding: 85px 0px;
+}
+
+#nine h2 {
+	color: #EDEDED;
+	font-size: 22px;
+	font-weight: normal;
+}
+
+#nine p {
+	color: #EDEDED;
+	font: bold 14px "华文宋体","宋体";
+	margin: 10px 0px 20px 0px;
+}
+
+#nine form {
+	margin: 30px auto;
+}
+
+#nine input:first-child {
+	margin: 0;
+	display: inline-block;
+	height: 28px;
+	width: 410px;
+	padding: 6px 10px;
+	border: 0;
+}
+
+#nine input:last-child {
+	width: 80px;
+	display: inline-block;
+	margin-left:-6px;
+	padding: 0;
+	border: 0;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 10px 0	;
+	background: #707278;
+	color: #EDEDED;
+	cursor: pointer;
+}
+
+#nine form:hover input {
+	box-shadow: 0 0 3px 1px #FAFAFA;
+}
+
+#nine form input:last-child:hover {
+	background: rgba(112,114,120,0.8);
+}
+
+#nine a {
+	display: inline-block;
+	margin: 10px 10px 0px 10px ;
+}
+
+/*----- 底部 -----*/
+footer {
+	background: #303039;
+	padding: 20px 50px 5px 50px;
+}
+
+footer a {
+	font-size: 12px;
+	color: #EDEDED;
+}
+
+footer a:last-child {
+	float: right;
+}
