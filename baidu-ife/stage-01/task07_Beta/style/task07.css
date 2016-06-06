@@ -14,14 +14,12 @@ li {
 }
 
 body {
-	width: 100%;
+	min-width: 1280px;
 	background-color: #FAFAFA;
 }
 
 #wrap {
-	/*min-width: 1280px;
-	max-width: 1568px;*/
-	width: 1280px;
+	max-width: 1568px;
 	margin: 0 auto;
 	background-color: #FFF;
 }
@@ -69,12 +67,18 @@ nav h1, nav ul, nav a, nav span {
 }
 
 nav ul {
-	font-size: 1em;
-	float: right;
+	font-size: 16px;
 	margin-right: 140px;
+	position: absolute;
+	right: 0;
+}
+
+nav li {
+	float: left;
 }
 
 nav li a {
+	text-align: center;
 	color: #A0A0A0;
 	padding: 14px 20px;
 	transition: 0.2S;
@@ -97,7 +101,8 @@ nav li:first-child a {
 	height: 55px;
 	position: absolute;
 	right: 0px;
-	margin-right: 65px;
+	margin-right: 35px;
+	padding: 0 20px;
 	color: #EB8F8F;
 	font-weight: bold;
 	transition: 0.2S;
@@ -146,6 +151,7 @@ nav li:first-child a {
 	font-size: 24px;
 	color: #FFF;
 	padding: 15px 100px;
+	text-align: center;
 	transition: 0.2S;
 	transition-property: color, background-color;
 }
@@ -752,29 +758,28 @@ nav li:first-child a {
 
 #nine input:first-child {
 	margin: 0;
-	display: inline-block;
 	height: 28px;
 	width: 410px;
 	padding: 6px 10px;
 	border: 0;
+	vertical-align: middle;
 }
 
 #nine input:last-child {
 	width: 80px;
-	display: inline-block;
-	margin-left:-6px;
-	padding: 0;
+	margin-left: -6px;
 	border: 0;
 	font-size: 16px;
 	line-height: 20px;
 	padding: 10px 0	;
 	background: #707278;
 	color: #EDEDED;
+	vertical-align: middle;
 	cursor: pointer;
 }
 
 #nine form:hover input {
-	box-shadow: 0 0 3px 1px #FAFAFA;
+	box-shadow: 0 0 3px #FAFAFA;
 }
 
 #nine form input:last-child:hover {
