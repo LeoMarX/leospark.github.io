@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS secrets test</title>
+
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFF;
+}
+
+.wrap {
+	width: 100%;
+	margin: 100px auto;
+}
+
+#one {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border-radius: 50%;
+	background-color: #52c51d;
+	position: relative;
+}
+
+#one:after {
+	content: "";
+	border-top: 0;
+	border-bottom: solid 50px #52c51d;
+	border-left: 0;
+	border-right: solid 50px #52c51d;
+	position: absolute;
+	bottom: 0;
+}
+
+/* via Book */
+#two {
+	height: 150px;
+	background: #655;
+	background-image: radial-gradient(tan 20%, transparent 0), radial-gradient(tan 20%, transparent 0);
+	background-size: 30px 30px;
+	background-position: 0 0 , 15px 15px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div id="one"></div>
+</div>
+
+<div class="wrap">
+	<div id="two"></div>
+</div>
+</body>
+</html>
