@@ -166,7 +166,7 @@ function bannerScroll() {
 function scroll() {
 	statuCount();
 	bannerScroll();
-	console.log("flag:" + flag);
+	// console.log("flag:" + flag);
 	animate = false;
 	t = setTimeout(scroll, 2500);
 }
@@ -178,12 +178,12 @@ function dotControl() {
 		dots[i].i = i;
 		dots[i].onclick = function() {
 			if(animate) {
-				console.log("animate is fasle!");
+				// console.log("animate is fasle!");
 				return false;
 			} else {
 				clearTimeout(t);
 				flag = this.i;
-				console.log("the flag is " + this.i);
+				// console.log("the flag is " + this.i);
 				scroll();
 			}
 		}
