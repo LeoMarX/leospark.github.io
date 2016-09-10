@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>scroll banner</title>
+<meta charset="utf-8">
+
+<style type="text/css">
+#banner_box {
+	display: block;
+	position: relative;
+	height: 350px;
+	width: 600px;
+	box-shadow: 0 0 5px #0094FF;
+	overflow: hidden;
+	margin: 100px auto 0;
+	padding: 0;
+}
+
+#banner_box ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: relative;
+}
+
+.banner_list {
+	font-size: 200px;
+	line-height: 1.5;
+	color: #FFF;
+	display: block;
+	width: 600px;
+	height: 350px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	position: absolute;
+	right: -100%;
+}
+
+#a { background: #FF7F7F; }
+
+#b { background: #FF7FED; }
+
+#c { background: #FFB27F; }
+
+#d { background: #7FC9FF; }
+
+.scroll_dis {
+	right: 0;
+	animation-name: list_scroll;
+	animation-duration: 0.6S;
+	animation-timing-function: ease;
+}
+
+@keyframes list_scroll {
+	0% {right: -100%; opacity: 0.7;}
+	100% {right: 0%; opacity: 1;}
+}
+
+.scroll_hide {
+	left: -100%;
+	animation-name: scroll_right;
+	animation-duration: 0.6S;
+	animation-timing-function: ease;
+}
+
+@keyframes scroll_right {
+	0%   {left: 0%; opacity: 1;}
+	100% {left: -100%; opacity: 0.6;}
+}
+
+#dot {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	bottom: 10px;
+	left: 260px;
+}
+
+#dot span {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	margin: 0 2px;
+	border-radius: 50%;
+	transition: background-color 0.8s;
+}
+
+#dot span:hover {
+	box-shadow: 0 0 1px 2px white;
+}
+
+.dot_un {
+	background-color: rgba(250,250,250,0.5);
+}
+
+.dot_flag {
+	background-color: rgba(255,216,0,0.8);
+}
+</style>
+</head>
+
+<body>
+<div id="banner_box">
+	<ul>
+		<li class="banner_list  scroll_dis" id="a">1</li>
+		<li class="banner_list" id="b">2</li>
+		<li class="banner_list" id="c">3</li>
+		<li class="banner_list" id="d">4</li>
+	</ul>
+
+	<div id="dot">
+		<span class="dot_flag"></span>
+		<span class="dot_un"></span>
+		<span class="dot_un"></span>
+		<span class="dot_un"></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+var box = document.getElementById("banner_box");
+var ul = box.getElementsByTagName("ul")[0];
+var banners = ul.getElementsByTagName("li");
+var dots = document.getElementById("dot").getElementsByTagName("span");
+var animate = false;
+var flag = 1;
+var statu = [];
+var t;
+
+
+function statuCount() {
+	if(flag < banners.length) {
+		show = flag;
+		if(flag > 0){
+			hide = flag - 1;
+		} else {
+			hide = banners.length - 1;
+		}
+	} else {
+		hide = flag -1;
+		flag = 0;
+		show = flag;
+	}
+	flag ++;
+	statu = [show,hide];
+}
+
+function bannerScroll() {
+	animate = true;
+	for (var i = 0; i < banners.length; i++) {
+		if (i == statu[0]) {
+			banners[i].className = "banner_list" + " scroll_dis";
+			dots[i].className = "dot_flag";
+		} else if(i == statu[1]) {
+			banners[i].className = "banner_list" + " scroll_hide";
+			dots[i].className = "dot_un";
+		} else {
+			banners[i].className = "banner_list";
+			dots[i].className = "dot_un";
+		}
+	}
+}
+
+function scroll() {
+	statuCount();
+	bannerScroll();
+	console.log("flag:" + flag);
+	animate = false;
+	t = setTimeout(scroll, 2500);
+}
+
+setTimeout(scroll, 2500);
+
+function dotControl() {
+	for(var i = 0; i < dots.length; i++) {
+		dots[i].i = i;
+		dots[i].onclick = function() {
+			if(animate) {
+				console.log("animate is fasle!");
+				return false;
+			} else {
+				clearTimeout(t);
+				flag = this.i;
+				console.log("the flag is " + this.i);
+				scroll();
+			}
+		}
+	}
+}
+
+dotControl();
+
+</script>
+</body>
+</html>
