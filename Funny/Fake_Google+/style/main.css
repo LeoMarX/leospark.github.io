@@ -1,0 +1,246 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #EEE;
+	font-family: "PingFang SC", "Microsoft YaHei", "黑体";
+}
+
+nav {
+	display: block;
+	height: 64px;
+	width: 100%;
+	min-width: 950px;
+	background-color: #DB4437;
+	box-shadow: 0 1px 4px 0 #999;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+
+#menu {
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+	cursor: pointer;
+	float: left;
+	margin: 8px;
+}
+
+#menu svg {
+	padding: 12px;
+	color: #FFF;
+}
+
+#logo {
+	display: inline-block;
+	color: #FFF;
+	font-weight: bold;
+	margin: 17px 10px;
+	float: left;
+}
+
+#logo a {
+	display: inline-block;
+	width: 88px;
+	height: 24px;
+	text-decoration: none;
+	background-image: url(../images/lockup_gplus_light_color_88x24dp.png);
+	background-repeat: no-repeat;
+	background-size: 88px 24px;
+	margin: auto;
+}
+
+#logo span {
+	font-size: 20px;
+	line-height: 1.5;
+	display: inline-block;
+	padding-left: 24px;
+	margin-left: 24px;
+	border-left: solid 1px #E2695F;
+	float: right;
+}
+
+#search {
+	display: inline-block;
+	float: left;
+	margin: 8px 20px 8px 40px;
+	position: relative;
+}
+
+#search input {
+	max-height: 720px;
+	min-width: 480px;
+	height: 48px;
+	outline: none;
+	background-color: #E06055;
+	border: 0;
+	border-radius: 3px;
+	font-size: 20px;
+	color: #FFF;
+	padding: 0 34px;
+}
+
+#search span {
+	position: absolute;
+	left: 40px;
+	top: 12px;
+	font-size: 16px;
+	color: #F6D0CD;
+	transition: opacity 0.3S;
+}
+
+#search input:focus + span {
+	opacity: 0;
+}
+
+.search_button {
+	position: absolute;
+	width: 24px;
+	height: 48px;
+	top: 0;
+	left: 10px;
+}
+
+#more {
+	display: inline-block;
+	float: right;
+	margin: 13px;
+}
+
+#more a {
+	height: 18px;
+	display: block;
+	padding: 10px;
+}
+
+/* 内容主体部分 */
+
+#main {
+	display: block;
+	width: 1000px;
+	margin: 80px auto 10px;
+}
+
+#create_new {
+	display: inline-block;
+	width: 470px;
+	padding: 10px;
+	box-shadow: 0 0 4px 1px #DDD;
+	background-color: #FEFEFE;
+	border-radius: 2px;
+	cursor: pointer;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.my_account {
+	display: inline-block;
+	height: 36px;
+	width: 36px;
+	background: url(../images/account.jpg) no-repeat;
+	border-radius: 50%;
+	background-size: 36px 36px;
+	float: left;
+	margin: 0 6px;
+}
+
+#create_new span {
+	display: inline-block;
+	color: #CCC;
+	line-height: 36px;
+}
+
+#create_new .upload_photo {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	padding: 9px;
+	background: #EEE;
+	border-radius: 50%;
+	float: right;
+}
+
+/*  内容列表 */
+
+.content_box {
+	display: block;
+	width: 470px;
+	padding: 10px 10px 30px;
+	background-color: #FEFEFE;
+	float: left;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px 1px #DDD;
+	margin-bottom: 20px;
+	animation-name: showBox;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+}
+
+@keyframes showBox {
+	0% {opacity: 0.5; margin-top: 40px;}
+	100% {opacity: 1; margin-top: 0;}
+}
+
+.content_user {
+	display: block;
+	width: 100%;
+	min-height: 20px;
+	cursor: pointer;
+}
+
+.content_user .user_pic {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background-color: #BBB;
+	border-radius: 50%;
+	float: left;
+	line-height: 36px;
+	background-image: url(../images/unnamed.jpg);
+	background-size: 36px;
+}
+
+.content_user .user_name {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 2;
+	margin-left: 10px;
+}
+
+.content_list span {
+	display: block;
+	white-space: pre-line;
+	margin: 10px 0;
+	min-height: 80px;
+}
+
+.content_list .pic {
+	width: 490px;
+	margin-left: -10px;
+	min-height: 300px;
+	background: #0094FF;
+	color: #FFF;
+}
+
+
+/* 右下角按钮 */
+#wirte_new {
+	display: block;
+	width: 56px;
+	height: 56px;
+	background: #db4437;
+	background-image: url(../images/create_wht_24dp.png);
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: center;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	border-radius: 50%;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+	cursor: pointer;
+}
