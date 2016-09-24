@@ -131,7 +131,7 @@ nav {
 
 #create_new {
 	display: inline-block;
-	width: 470px;
+	width: 465px;
 	padding: 10px;
 	box-shadow: 0 0 4px 1px #DDD;
 	background-color: #FEFEFE;
@@ -172,14 +172,15 @@ nav {
 
 .content_box {
 	display: block;
-	width: 470px;
+	width: 465px;
 	padding: 10px 10px 30px;
 	background-color: #FEFEFE;
 	float: left;
 	border-radius: 2px;
-	box-shadow: 0 1px 4px 1px #DDD;
+	box-shadow: 0 1px 4px 1px #CCC;
 	margin-bottom: 20px;
 	opacity: 1;
+	transition: box-shadow 0.3S;
 	animation-name: showBox;
 	animation-duration: 1s;
 	animation-timing-function: ease;
@@ -188,6 +189,10 @@ nav {
 @keyframes showBox {
 	0% {opacity: 0.3;}
 	100% {opacity: 1;}
+}
+
+.content_box:hover {
+	box-shadow: 0 0 6px 4px #CCC;
 }
 
 .content_user {
@@ -232,7 +237,7 @@ nav {
 }
 
 .content_list .pic {
-	width: 490px;
+	width: 485px;
 	margin-left: -10px;
 	min-height: 300px;
 	background: #0094FF;
