@@ -48,30 +48,10 @@ function posFloat() {
 		// console.log("pos: " + pos);
 }
 
-function checkScroll(){
-	// ???
-    var $last = $("#main>div").last();
-    var lastH = $last.offset().top + Math.floor($last.height()/2);
-    var scrollTop = $(window).scrollTop();
-    var documentH = $(document).width();
-    // console.log("scrollTop: "+ scrollTop + "; documentH: " + documentH + "; lastTop:" + $last.offset().top);
-    return (scrollTop + documentH > lastH) ? true : false;
-    // return false;
-}
-
-function test() {
-	var $main  = $("#main>div");
-	console.log($main.last().offset().top);
-	console.log($(window).scrollTop());
-
-	var $new = $("#create_new");
-	console.log($new.offset().top);
-}
-
-function test2() {
+function checkScroll() {
 	var $last = $("#main>div").last();
     var lastH = $last.offset().top;
     var scrollTop = $(window).scrollTop();
     var windowH =  $(window).height();
-    return (scrollTop+ windowH > lastH) ? true : false;
+    return (scrollTop + windowH > lastH) ? true : false;
 }
