@@ -1,6 +1,6 @@
 $(function () {
 	window.onscroll = function() {
-		if (test2()) {
+		if (checkScroll()) {
 			pushNews();
 		}
 	}
