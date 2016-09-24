@@ -71,7 +71,6 @@ nav {
 }
 
 #search input {
-	max-height: 720px;
 	min-width: 480px;
 	height: 48px;
 	outline: none;
@@ -81,6 +80,12 @@ nav {
 	font-size: 20px;
 	color: #FFF;
 	padding: 0 34px;
+	transition: min-width 0.5S, padding 0.2S;
+}
+
+#search input:focus {
+	padding: 0 40px;
+	min-width: 500px;
 }
 
 #search span {
@@ -132,8 +137,8 @@ nav {
 	background-color: #FEFEFE;
 	border-radius: 2px;
 	cursor: pointer;
-	float: left;
 	margin-bottom: 20px;
+	float: left;
 }
 
 .my_account {
@@ -174,14 +179,15 @@ nav {
 	border-radius: 2px;
 	box-shadow: 0 1px 4px 1px #DDD;
 	margin-bottom: 20px;
+	opacity: 1;
 	animation-name: showBox;
 	animation-duration: 1s;
 	animation-timing-function: ease;
 }
 
 @keyframes showBox {
-	0% {opacity: 0.5; margin-top: 40px;}
-	100% {opacity: 1; margin-top: 0;}
+	0% {opacity: 0.3;/* margin-top: 40px;*/}
+	100% {opacity: 1;/* margin-top: 0;*/}
 }
 
 .content_user {
@@ -189,6 +195,13 @@ nav {
 	width: 100%;
 	min-height: 20px;
 	cursor: pointer;
+	animation: float_right 1S;
+	position: relative;
+}
+
+@keyframes float_right {
+	0% {top: 20px;}
+	100% {top: 0;}
 }
 
 .content_user .user_pic {
