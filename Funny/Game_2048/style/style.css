@@ -1,0 +1,130 @@
+html{
+    font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background-color: #FAF8EF;
+	background-image: repeating-linear-gradient(90deg, #FAF8EF, #FAF8EF 5px, #F9F6F2 0, #F9F6F2 10px);
+}
+
+#wrapper {
+	display: block;
+	padding: 0 -moz-calc(50% - 25em);
+	padding: 0 -webkit-calc(50% - 25em);
+	padding: 0 calc(50% - 25em);
+}
+
+#heading {
+	display: block;
+	width: 500px;
+	width: 50rem;
+	margin: 4rem 0;
+	position: relative;
+}
+
+#title {
+	display: inline-block;
+	font-size: 8em;
+	color: #776e65;
+	position: relative;
+	left: 0;
+	top: 0;
+	margin: 2rem;
+}
+
+#score {
+	display: inline-block;
+	background-color: #bbada0;
+	min-width: 7rem;
+	padding: 1rem 2rem 0.5rem;
+	float: right;
+	margin: 1rem 0;
+	border-radius: 0.4rem;
+	color: #FFF;
+	font-size: 3em;
+	line-height: 1.5;
+	font-weight: bold;
+	text-align: center;
+}
+
+#score:before {
+	content: "SCORE";
+	display: block;
+	color: #eee4da;
+	font-size: 1.4rem;
+	line-height: 1;
+}
+
+#tips {
+	display: inline-block;
+	font-size: 1.8em;
+	line-height: 4.5rem;
+	color: #776e65;
+}
+
+#new_game {
+	float: right;
+	transition: text-shadow 0.4S;
+}
+
+#new_game:hover {
+	text-shadow: 0 0 5px #DDBE20;
+}
+
+#new_game a {
+	display: inline-block;
+	text-decoration: none;
+	background-color: #8F7A64;
+	color: #f9f6f2;
+	font-size: 2em;
+	font-weight: bold;
+	border-radius: 0.4rem;
+	padding: 1rem;
+}
+
+#container {
+	display: block;
+	width: 50rem;
+	height: 50rem;
+	background-color: #bbada0;
+	border-radius: 0.8rem;
+	position: relative;
+	cursor: default;
+}
+
+.grid-cell {
+	width: 10rem;
+	height: 10rem;
+	background-color: rgba(238, 228, 218, 0.35);
+	margin: 2rem 0 0 2rem;
+	border-radius: 0.4rem;
+	float: left;
+}
+
+.number-cell {
+	display: none;
+	width: 10rem;
+	height: 10rem;
+	position: absolute;
+	z-index: 10;
+	border-radius: 0.4rem;
+	font-size: 5.5em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 10rem;
+/*	background-color: #eee4da;
+	color: #776e65;*/
+}
+
+@keyframes pop {
+	0% {transform: scale(1);}
+	50% {transform: scale(1.2);}
+	100% {transform: scale(1);}
+}
+
+.new_number {
+	animation: pop 0.2S;
+}
