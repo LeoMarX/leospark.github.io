@@ -38,7 +38,7 @@ function randNumber() {
 		document.getElementById("number-cell-"+row+"-"+col).className = "number-cell" + " new_number";
 		setTimeout(function(){
 			document.getElementById("number-cell-"+row+"-"+col).className = "number-cell"
-			}, 300);
+			}, 220);
 		// console.log(row + "; " + col + "; " + board[row][col]);
 	}
 	// return no zero?
@@ -66,7 +66,7 @@ function moveLeft() {
 						moveAnimation(i,k,i,j);
 						flags ++;
 						// console.log("three: "+i+", "+j+", "+k);
-						break;
+						// break;
 					}
 				}
 				if(board[i][j]!==0 && board[i][k]!==0) {
@@ -106,7 +106,7 @@ function moveRight() {
 						board[i][k] = 0;
 						moveAnimation(i,k,i,j);
 						flags ++;
-						break;
+						// break;
 					}
 				}
 
@@ -145,7 +145,7 @@ function moveUp() {
 						board[k][j] = 0;
 						moveAnimation(k,j,i,j);
 						flags ++;
-						break;
+						// break;
 					}
 				}
 
@@ -184,7 +184,7 @@ function moveDown() {
 						board[k][j] = 0;
 						moveAnimation(k,j,i,j);
 						flags ++;
-						break;
+						// break;
 					}
 				}
 
@@ -246,6 +246,7 @@ document.onkeydown = function(event){
 			}
 			break;
 		default:
+			refreshBoardView();
 			break;
 	}
 	updateScore();
