@@ -259,6 +259,7 @@ document.onkeydown = function(event){
 	checkGameOver();
 }
 
+// 添加 touch 事件
 document.addEventListener("touchstart",function(event) {
 	startX = event.touches[0].pageX;
 	startY = event.touches[0].pageY;
@@ -273,7 +274,7 @@ document.addEventListener("touchend",function(event) {
 		deltaX = Math.abs(slideX),
 		deltaY = Math.abs(slideY);
 
-	if(deltaX<0.3*document.body.clientWidth && deltaY<0.3*document.body.clientWidth) {
+	if(deltaX<0.2*document.body.clientWidth && deltaY<0.2*document.body.clientWidth) {
 		return;
 	}
 
