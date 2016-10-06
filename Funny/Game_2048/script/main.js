@@ -224,24 +224,28 @@ document.onkeydown = function(event){
 	event = event || window.event;
 	switch(event.keyCode) {
 		case 37:
+			event.preventDefault();
 			if(moveLeft()){
 				setTimeout("randNumber()",160);
 				setTimeout("refreshBoardView()",180);
 			}
 			break;
 		case 38:
+			event.preventDefault();
 			if(moveUp()){
 				setTimeout("randNumber()",160);
 				setTimeout("refreshBoardView()",180);
 			}
 			break;
 		case 39:
+			event.preventDefault();
 			if(moveRight()){
 				setTimeout("randNumber()",160);
 				setTimeout("refreshBoardView()",180);
 			}
 			break;
 		case 40:
+			event.preventDefault();
 			if(moveDown()){
 				setTimeout("randNumber()",160);
 				setTimeout("refreshBoardView()",180);
@@ -254,3 +258,50 @@ document.onkeydown = function(event){
 	updateScore();
 	checkGameOver();
 }
+
+document.addEventListener("touchstart",function(event) {
+	startX = event.touches[0].pageX;
+	startY = event.touches[0].pageY;
+})
+
+document.addEventListener("touchend",function(event) {
+	endX = event.changedTouches[0].pageX;
+	endY = event.changedTouches[0].pageY;
+
+	var slideX = endX - startX,
+		slideY = endY - startY,
+		deltaX = Math.abs(slideX),
+		deltaY = Math.abs(slideY);
+
+	if(deltaX<0.3*document.body.clientWidth && deltaY<0.3*document.body.clientWidth) {
+		return;
+	}
+
+	if(deltaX>deltaY) {
+		if(slideX>0) {
+			if(moveRight()){
+				setTimeout("randNumber()",160);
+				setTimeout("refreshBoardView()",180);
+			}
+		} else {
+			if(moveLeft()){
+				setTimeout("randNumber()",160);
+				setTimeout("refreshBoardView()",180);
+			}
+		}
+	} else {
+		if(slideY>0) {
+			if(moveDown()){
+				setTimeout("randNumber()",160);
+				setTimeout("refreshBoardView()",180);
+			}			
+		} else {
+			if(moveUp()){
+				setTimeout("randNumber()",160);
+				setTimeout("refreshBoardView()",180);
+			}
+		}
+	}
+	updateScore();
+	checkGameOver();
+});

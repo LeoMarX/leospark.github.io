@@ -1,20 +1,24 @@
-html{
+html {
     font-size: 62.5%;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Arial;
+	font-family: Arial,sans-serif;
 	background-color: #FAF8EF;
 	background-image: repeating-linear-gradient(90deg, #FAF8EF, #FAF8EF 5px, #F9F6F2 0, #F9F6F2 10px);
 }
 
 #wrapper {
 	display: block;
-	padding: 0 -moz-calc(50% - 25em);
-	padding: 0 -webkit-calc(50% - 25em);
-	padding: 0 calc(50% - 25em);
+	width: 500px;
+	width: 50rem;
+	height: 100%;
+/*	padding: 0 -moz-calc(50% - 25rem);
+	padding: 0 -webkit-calc(50% - 25rem);
+	padding: 0 calc(50% - 25rem);*/
+	margin: 0 auto;
 }
 
 #heading {
@@ -27,7 +31,7 @@ body {
 
 #title {
 	display: inline-block;
-	font-size: 8em;
+	font-size: 8rem;
 	color: #776e65;
 	position: relative;
 	left: 0;
@@ -44,7 +48,7 @@ body {
 	margin: 1rem 0;
 	border-radius: 0.4rem;
 	color: #FFF;
-	font-size: 3em;
+	font-size: 3rem;
 	line-height: 1.5;
 	font-weight: bold;
 	text-align: center;
@@ -60,7 +64,7 @@ body {
 
 #tips {
 	display: inline-block;
-	font-size: 1.8em;
+	font-size: 1.8rem;
 	line-height: 4.5rem;
 	color: #776e65;
 }
@@ -79,7 +83,7 @@ body {
 	text-decoration: none;
 	background-color: #8F7A64;
 	color: #f9f6f2;
-	font-size: 2em;
+	font-size: 2rem;
 	font-weight: bold;
 	border-radius: 0.4rem;
 	padding: 1rem;
@@ -87,6 +91,7 @@ body {
 
 #container {
 	display: block;
+	width: 500px;
 	width: 50rem;
 	height: 50rem;
 	background-color: #bbada0;
@@ -111,12 +116,10 @@ body {
 	position: absolute;
 	z-index: 10;
 	border-radius: 0.4rem;
-	font-size: 5.5em;
+	font-size: 5.5rem;
 	font-weight: bold;
 	text-align: center;
 	line-height: 10rem;
-/*	background-color: #eee4da;
-	color: #776e65;*/
 }
 
 @keyframes pop {
@@ -145,21 +148,21 @@ body {
 }
 
 #notice p {
-	font-size: 6em;
+	font-size: 6rem;
 	font-weight: bold;
 	color: #F3CC0B;
-	text-shadow: 0 0 0.5em #f1cd1c;
+	text-shadow: 0 0 2rem #f1cd1c;
 	text-align: center;
-	margin-top: 3em;
+	margin-top: 15rem;
 	animation: noticPop 0.3S;
 }
 
 #retry {
 	display: block;
-	width: 6em;
-	padding: 1rem 0;
+	width: 12rem;
+	padding: 1rem 0.5rem;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2.5rem;
 	font-weight: bold;
 	color: #f9f6f2;
 	background-color: #8F7A64;
@@ -167,3 +170,4 @@ body {
 	cursor: pointer;
 	margin: 0 auto;
 }
+
