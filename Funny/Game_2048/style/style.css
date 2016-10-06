@@ -128,3 +128,42 @@ body {
 .new_number {
 	animation: pop 0.2S;
 }
+
+#notice {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	background-color: rgba(238,228,218,0.8);
+}
+
+@keyframes noticPop {
+	0% {transform: scale(0.8);}
+	50% {transform: scale(1.1);}
+	100% {transform: scale(1);}
+}
+
+#notice p {
+	font-size: 6em;
+	font-weight: bold;
+	color: #F3CC0B;
+	text-shadow: 0 0 0.5em #f1cd1c;
+	text-align: center;
+	margin-top: 3em;
+	animation: noticPop 0.3S;
+}
+
+#retry {
+	display: block;
+	width: 6em;
+	padding: 1rem 0;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	color: #f9f6f2;
+	background-color: #8F7A64;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	margin: 0 auto;
+}

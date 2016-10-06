@@ -6,18 +6,19 @@ var numberBackgroundColor = {2:"#eee4da", 4:"#ede0c8", 8:"#f2b179", 16:"#f59563"
 function refreshBoardView() {
 	for(var i=0; i<4; i++) {
 		for(var j=0; j<4; j++) {
-			document.getElementById("number-cell-"+i+"-"+j).textContent = board[i][j];
+			var numberCell = document.getElementById("number-cell-"+i+"-"+j);
+			numberCell.textContent = board[i][j];
 
 			// 设置样式
 			if(board[i][j] !== 0) {
-				document.getElementById("number-cell-"+i+"-"+j).style.display = "block";
-				document.getElementById("number-cell-"+i+"-"+j).style.top = getPos(i) + "px";
-				document.getElementById("number-cell-"+i+"-"+j).style.left = getPos(j) + "px";
-				document.getElementById("number-cell-"+i+"-"+j).style.background = board[i][j]<=8192 ? numberBackgroundColor[board[i][j]] : "black";
-				document.getElementById("number-cell-"+i+"-"+j).style.color = board[i][j]<=4 ? "#776e65" : "white";
-				document.getElementById("number-cell-"+i+"-"+j).style.fontSize = getFontsize(board[i][j]) + "px";
+				numberCell.style.display = "block";
+				numberCell.style.top = getPos(i) + "px";
+				numberCell.style.left = getPos(j) + "px";
+				numberCell.style.background = board[i][j]<=8192 ? numberBackgroundColor[board[i][j]] : "black";
+				numberCell.style.color = board[i][j]<=4 ? "#776e65" : "white";
+				numberCell.style.fontSize = getFontsize(board[i][j]) + "px";
 			} else {
-				document.getElementById("number-cell-"+i+"-"+j).style.display = "none";
+				numberCell.style.display = "none";
 			}
 		}
 	}
@@ -56,3 +57,12 @@ function moveAnimation(fromX, fromY, toX, toY) {
 function updateScore() {
 	document.getElementById("score").innerHTML = score;
 }
+
+function noticeGameOver() {
+	setTimeout(function(){document.getElementById("notice").style.display = "block"}, 200);
+	document.getElementById("retry").onclick = function() {
+		document.getElementById("notice").style.display = "none";
+		newGame();
+	}
+}
+
