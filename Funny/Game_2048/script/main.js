@@ -20,6 +20,7 @@ function newGame() {
 }
 // 生成新的随机数
 function randNumber() {
+	// 获取所有为0的数字的位置
 	var storeZero = [];
 	for(var i=0; i<4; i++) {
 		for(var j=0; j<4; j++) {
@@ -30,6 +31,7 @@ function randNumber() {
 	}
 
 	if(storeZero.length > 0) {
+		// 随机选择一个位置
 		var randomPos = Math.floor(Math.random()*storeZero.length);
 		var row = storeZero[randomPos][0];
 		var col = storeZero[randomPos][1];
@@ -213,7 +215,7 @@ function checkGameOver() {
 			}
 		}
 	}
-	alert("Game Over!");
+	noticeGameOver();
 	return false;
 }
 
