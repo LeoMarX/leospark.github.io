@@ -1,7 +1,3 @@
-html {
-    font-size: 62.5%;
-}
-
 body {
 	margin: 0;
 	padding: 0;
@@ -13,43 +9,40 @@ body {
 #wrapper {
 	display: block;
 	width: 500px;
-	width: 50rem;
 	height: 100%;
-/*	padding: 0 -moz-calc(50% - 25rem);
-	padding: 0 -webkit-calc(50% - 25rem);
-	padding: 0 calc(50% - 25rem);*/
+	padding: 20px;
 	margin: 0 auto;
 }
 
 #heading {
 	display: block;
 	width: 500px;
-	width: 50rem;
-	margin: 4rem 0;
+	margin: 20px 0;
 	position: relative;
 }
 
 #title {
 	display: inline-block;
-	font-size: 8rem;
+	font-size: 80px;
 	color: #776e65;
 	position: relative;
 	left: 0;
 	top: 0;
-	margin: 2rem;
+	margin: 20px;
 }
 
 #score {
 	display: inline-block;
 	background-color: #bbada0;
-	min-width: 7rem;
-	padding: 1rem 2rem 0.5rem;
+	width: 70px;
+	padding: 10px 20px 5px;
 	float: right;
-	margin: 1rem 0;
-	border-radius: 0.4rem;
+	margin: 20px;
+	margin: 10px 0;
+	border-radius: 4px;
 	color: #FFF;
-	font-size: 3rem;
-	line-height: 1.5;
+	font-size: 30px;
+	line-height: 1.4;
 	font-weight: bold;
 	text-align: center;
 }
@@ -58,14 +51,14 @@ body {
 	content: "SCORE";
 	display: block;
 	color: #eee4da;
-	font-size: 1.4rem;
+	font-size: 14px;
 	line-height: 1;
 }
 
 #tips {
 	display: inline-block;
-	font-size: 1.8rem;
-	line-height: 4.5rem;
+	font-size: 18px;
+	line-height: 45px;
 	color: #776e65;
 }
 
@@ -83,43 +76,42 @@ body {
 	text-decoration: none;
 	background-color: #8F7A64;
 	color: #f9f6f2;
-	font-size: 2rem;
+	font-size: 20px;
 	font-weight: bold;
-	border-radius: 0.4rem;
-	padding: 1rem;
+	border-radius: 4px;
+	padding: 10px;
 }
 
 #container {
 	display: block;
 	width: 500px;
-	width: 50rem;
-	height: 50rem;
+	height: 500px;
 	background-color: #bbada0;
-	border-radius: 0.8rem;
+	border-radius: 8px;
 	position: relative;
 	cursor: default;
 }
 
 .grid-cell {
-	width: 10rem;
-	height: 10rem;
+	width: 20%;
+	height: 20%;
 	background-color: rgba(238, 228, 218, 0.35);
-	margin: 2rem 0 0 2rem;
-	border-radius: 0.4rem;
+	margin: 4% 0 0 4%;
+	border-radius: 4px;
 	float: left;
 }
 
 .number-cell {
 	display: none;
-	width: 10rem;
-	height: 10rem;
+	width: 20%;
+	height: 20%;
 	position: absolute;
 	z-index: 10;
-	border-radius: 0.4rem;
-	font-size: 5.5rem;
+	border-radius: 4px;
+	font-size: 550px;
 	font-weight: bold;
 	text-align: center;
-	line-height: 10rem;
+	line-height: 100px;
 }
 
 @keyframes pop {
@@ -148,26 +140,25 @@ body {
 }
 
 #notice p {
-	font-size: 6rem;
+	font-size: 60px;
 	font-weight: bold;
 	color: #F3CC0B;
-	text-shadow: 0 0 2rem #f1cd1c;
+	text-shadow: 0 0 20px #f1cd1c;
 	text-align: center;
-	margin-top: 15rem;
+	margin-top: 150px;
 	animation: noticPop 0.3S;
 }
 
 #retry {
 	display: block;
-	width: 12rem;
-	padding: 1rem 0.5rem;
+	width: 40%;
+	padding: 10px 5px;
 	text-align: center;
-	font-size: 2.5rem;
+	font-size: 25px;
 	font-weight: bold;
 	color: #f9f6f2;
-	background-color: #8F7A64;
-	border-radius: 0.5rem;
+	background-color: rgba(143,122,100,0.9);
+	border-radius: 5px;
 	cursor: pointer;
 	margin: 0 auto;
 }
-

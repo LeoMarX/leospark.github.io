@@ -1,0 +1,54 @@
+#wrapper {
+	width: 300px;
+	padding: 10px;
+}
+
+#heading {
+	width: 300px;
+	margin: 0 0 20px 0;
+}
+
+#top {
+	width: 300px;
+}
+
+#title {
+	font-size: 60px;
+}
+
+#score {
+	width: 66px;
+	padding: 8px 15px 0;
+	margin: 20px 0;
+}
+
+#tips {
+	width: 60%;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+#new_game a {
+	font-size: 14px;
+}
+
+#container {
+	width: 300px;
+	height: 300px;
+	position: relative;
+}
+
+.number-cell {
+	line-height: 60px;
+}
+
+#notice p {
+	font-size: 40px;
+	margin-top: 80px;
+}
+
+#retry {
+	font-size: 20px;
+	padding: 10px 0;
+	background-color: rgba(143,122,100,0.8);
+}
