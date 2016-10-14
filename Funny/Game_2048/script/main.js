@@ -222,33 +222,33 @@ function checkGameOver() {
 // 绑定键盘事件
 document.onkeydown = function(event){
 	event = event || window.event;
+	function timer() {
+		randNumber();
+		refreshBoardView();
+	}
 	switch(event.keyCode) {
 		case 37:
 			event.preventDefault();
 			if(moveLeft()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 			break;
 		case 38:
 			event.preventDefault();
 			if(moveUp()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 			break;
 		case 39:
 			event.preventDefault();
 			if(moveRight()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 			break;
 		case 40:
 			event.preventDefault();
 			if(moveDown()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 			break;
 		default:
@@ -257,7 +257,7 @@ document.onkeydown = function(event){
 	}
 	updateScore();
 	checkGameOver();
-}
+};
 
 // 添加 touch 事件
 document.addEventListener("touchstart",function(event) {
@@ -282,28 +282,29 @@ document.addEventListener("touchend",function(event) {
 		return;
 	}
 
+	function timer() {
+		randNumber();
+		refreshBoardView();
+	}
+
 	if(deltaX>deltaY) {
 		if(slideX>0) {
 			if(moveRight()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 		} else {
 			if(moveLeft()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 		}
 	} else {
 		if(slideY>0) {
 			if(moveDown()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}			
 		} else {
 			if(moveUp()){
-				setTimeout("randNumber()",160);
-				setTimeout("refreshBoardView()",180);
+				setTimeout(timer, 180);
 			}
 		}
 	}

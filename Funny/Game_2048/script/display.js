@@ -50,7 +50,7 @@ function moveAnimation(fromX, fromY, toX, toY) {
 				flag ++;
 				if(flag>10) {
 					clearInterval(t);
-				} 
+				}
 		}, 14);
 }
 
