@@ -51,7 +51,7 @@ function moveAnimation(fromX, fromY, toX, toY) {
 				if(flag>10) {
 					clearInterval(t);
 				} 
-		}, 16);
+		}, 13);
 }
 
 function updateScore() {
