@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stars</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body > div {
+			box-shadow: 0 0 3px #DDD;
+			min-height: 150px;
+			width: 300px;
+			margin: 0 auto;
+		}
+
+		li {
+			color: #CCC;
+			font-size: 40px;
+			list-style: none;
+			float: left;
+			cursor: pointer;
+		}
+
+		.red, li:hover {
+			color: #F00;
+			text-shadow: 0 0 3px #F00;
+		}
+
+		#score {
+			font-size: 40px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<ul id="one">
+		<li> &#9733 </li>
+		<li> &#9733 </li>
+		<li> &#9733 </li>
+		<li> &#9733 </li>
+		<li> &#9733 </li>
+	</ul>
+	<div><span id="score">0</span>分</div>
+</div>
+
+<script type="text/javascript">
+	var points = 0;
+	var one = document.getElementById("one");
+	var li = one.getElementsByTagName("li");
+	var score = document.getElementById("score");
+
+	for (var i = 0; i < li.length; i++) {
+		li[i].index = i+1;
+		li[i].onmouseover = function() {
+			addColor(this.index);
+			clearColor(this.index);
+			score.textContent = this.index;
+		}
+
+		one.onmouseout = function() {
+			clearColor(points);
+			addColor(points);
+			score.textContent = points;
+		}
+
+		li[i].onclick = function() {
+			points = parseInt(this.index);
+		}
+	}
+
+	function addColor(index) {
+		for (var i = 0; i < index; i++) {
+			li[i].className = "red";
+		}
+	}
+
+	function clearColor(index) {
+		for (var i = li.length - 1; i >= index; i--) {
+			li[i].className = "";
+		}
+	}
+</script>
+</body>
+</html>
