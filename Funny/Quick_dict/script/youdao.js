@@ -12,7 +12,7 @@ function getURL(q) {
 	var apiKey = "1787962561",
 		keyfrom = "f2ec-org";
 
-	var link = "http://fanyi.youdao.com/openapi.do?keyfrom=" + keyfrom + "&key=" + apiKey + "&type=data&doctype=jsonp&callback=request&version=1.1&q=" + q;
+	var link = "//fanyi.youdao.com/openapi.do?keyfrom=" + keyfrom + "&key=" + apiKey + "&type=data&doctype=jsonp&callback=request&version=1.1&q=" + q;
 	url = encodeURI(link);
 	// console.log(url);
 }
