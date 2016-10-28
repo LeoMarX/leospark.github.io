@@ -15,6 +15,9 @@ body {
 
 #query-text {
 	box-shadow: 5px 0 6px 1px #A0A0A0;
+	/* 兼容不支持 calc 浏览器*/
+	max-width: 280px;
+	max-width: calc(100% - 110px);
 }
 
 #query-text:focus {
