@@ -34,7 +34,7 @@ body {
 	height: 3.125rem;
 	max-width: 640px; /* 750-110 */
 	max-width: calc(100% - 110px);
-	padding: 0 2.5rem 0 0.625rem;
+	padding: 0 3rem 0 0.625rem;
 	float: left;
 	vertical-align: top;
 	border: 0;
@@ -47,7 +47,7 @@ body {
 	line-height: 1.5;
 	background-color: #FFF;
 	outline: 0;
-	transition: box-shadow .5s .2s ease-out;
+	transition: box-shadow .5s .1s ease-out;
 }
 
 #query-text:focus {
@@ -90,46 +90,95 @@ body {
 	height: 1.875rem;
 	position: relative;
 	top: -1px;
-	padding: 11px 16px 11px 6px;
+	padding: 11px 14px 11px 6px;
 	background-color: #0094FF;
 	outline: 0;
 	border: 0;
 	border-radius: 2px;
 	cursor: pointer;
-	box-shadow: -10px 0 6px 1px #A0A0A0, 0 4px 30px 10px rgba(204,204,204,.4);
-	transition: box-shadow .5s .2s ease-out, opacity .5s .2s ease-out,background-color .2s;
+	box-shadow: -5px 0 6px 1px #A0A0A0, 0 4px 30px 10px rgba(204,204,204,.4);
+	transition: box-shadow .5s .1s ease-out, opacity .5s .1s ease-out, background-color .2s;
 }
 
 #search-button:before {
 	content: "";
 	display: block;
-	width: 20px;
-	width: 1.25rem;
+	width: 8px;
+	width: .5rem;
 	position: absolute;
-	left: -35px;
+	left: -22px;
 	top: 0;
 	z-index: 10;
 	border-bottom: solid 3.25rem #0094FF;
-	border-left: solid 1.25rem transparent;
+	border-left: solid 1rem transparent;
 	transition: all .2s;
 }
 
 #search-button:hover {
 	background-color: #1990E5;
 }
+
 #search-button:hover:before {
 	border-bottom: solid 52px #1990E5;
 }
 
+/* 清除按钮 */
+#clear-button {
+	width: 30px;
+	height: 3px;
+	position: absolute;
+	right: 74px;
+	top: 24px;
+	z-index: 15;
+	background-color: #404040;
+	transform: rotateZ(45deg);
+	cursor: pointer;
+}
+
+#clear-button:before {
+	content: "";
+	width: 30px;
+	height: 3px;
+	position: absolute;
+	top: 0;
+	left: -1px;
+	z-index: 16;
+	background-color: #404040;
+	transform: rotateZ(90deg);
+	cursor: pointer;
+}
+
+@keyframes show {
+	0% {opacity: 0; transform: rotateZ(30deg);}
+	100% {opacity: 1; transform: rotateZ(45deg);}
+}
+
+.btn-show {
+	display: inline-block;
+	animation: show .5s;
+}
+
+.btn-hidden {
+	display: none;
+}
+
+
+/* 查询结果 */
 #result {
 	color: #4C4C4C;
 	font-family: inherit;
+}
+
+@keyframes fade-in {
+	0% {opacity: .5;}
+	100% {opacity: 1;}
 }
 
 #result ul {
 	margin: 0;
 	padding: .3rem 1rem .3rem 1rem;
 	background-color: rgba(246,249,252,1);
+	animation: fade-in .5s;
 }
 
 #result li {

@@ -110,14 +110,28 @@ function queryWord() {
     document.getElementsByTagName("head")[0].appendChild(script);
 }
 
+// 绑定点击事件
 document.getElementById("search-button").onclick = function() {
 	queryWord();
 }
 
-document.getElementById("query-text").onkeyup = function(event) {
+var queryText = document.getElementById("query-text");
+var clearBtn = document.getElementById("clear-button");
+
+queryText.onkeyup = function(event) {
 	event = event || window.event;
 	// 按下 enter 按键
 	if(event.keyCode == 13) {
 		queryWord();
 	}
+	clearBtn.className = queryText.value ? "btn-show" : "btn-hidden";
+}
+
+queryText.onfocus = function() {
+	clearBtn.className = queryText.value ? "btn-show" : "btn-hidden";
+}
+
+clearBtn.onclick = function() {
+	queryText.value = "";
+	clearBtn.className = "btn-hidden";
 }
