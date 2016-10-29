@@ -130,6 +130,7 @@ body {
 	top: 24px;
 	z-index: 15;
 	background-color: #404040;
+	-webkit-transform: rotateZ(45deg);
 	transform: rotateZ(45deg);
 	cursor: pointer;
 }
@@ -143,6 +144,7 @@ body {
 	left: -1px;
 	z-index: 16;
 	background-color: #404040;
+	-webkit-transform: rotateZ(90deg);
 	transform: rotateZ(90deg);
 	cursor: pointer;
 }
