@@ -31,7 +31,7 @@ $(document).ready(function () {
 
             var $checkbox = $("<input type='checkbox' type='items'>");
 
-            var $img = $("<img src='img.png' alt='pic'>");
+            var $img = $("<img src='./img/img.png' alt='pic'>");
             $img.attr("src",store[i].goodThumb);
 
             var $name = $('<span class="product-name"></span>');
