@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue dmeo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="top">购物车</div>
+    <div id="del-btn">
+        <img src="./img/delete.svg" onclick="app.clearAll()"></div>
+
+    <div id="shopping-box">
+        <!-- 购物列表 -->
+        <div class="shopping-list" v-for="(item, index) in items">
+            <input type="checkbox" :value="item" v-model="checked">
+            <img :src="item.goodThumb" alt="pic">
+            <span class="product-name"> {{ item.goodName }} </span>
+            <span class="product-price"> {{ item.goodPrice }} </span>
+            <div class="num-box">
+                <span>数量：</span>
+                <button class="more" 
+                @click="more(index)">+</button>
+                <span class="piece"> {{ item.salesVolume }} </span>
+                <button class="less"
+                 @click="less(index)">-</button>
+            </div>
+        </div>
+
+        <!-- 计算总价 -->
+        <div id="calculate">
+            <input type="checkbox" id="select-all" v-model="allChecked">
+            <label for="select-all">全选</label>
+            <div class="nums-box">
+                合计￥<span id="calc-price"> {{ totalPrice }} </span> 
+                共 <span id="calc-nums"> {{ totalNums }} </span> 件
+            </div>
+            <span class="calc-btn">去结算</span>
+            <span class="tips">（下单即享多重减免优惠）</span>
+        </div>
+    </div>
+
+<script type="text/javascript" src="./script/vue.js"></script>
+<script type="text/javascript" src="./script/data.js"></script>
+<script type="text/javascript">
+
+        var app = new Vue({
+            el: "#shopping-box",
+            data: {
+                items: dataList.data,
+                checked: []
+            },
+            methods: {
+
+                more: function (index) {
+                    this.items[index].salesVolume++;
+                },
+
+                less: function (index) {
+                    this.items[index].salesVolume > 0 ? this.items[index].salesVolume-- : 0;
+                },
+
+                clearAll: function () {
+                    this.items = [];
+                    this.checked = [];
+                }
+            },
+            computed: {
+
+                allChecked: {
+                    get: function () {
+                        return this.checked.length > 0 && this.checked.length == this.items.length;
+                    },
+                    set: function (value) {
+                        if (value) {
+                            this.checked = this.items;
+                        } else {
+                            this.checked = [];
+                        }
+                        console.log("this is allChecked setter.");
+                    }
+                },
+
+                totalPrice: function () {
+                    var tmp = 0, _this = this;
+                    if (_this.checked.length <= 0) {
+                        return 0;
+                    }
+                    for (var i = 0; i < _this.checked.length; i++) {
+                        var _price = parseInt(_this.checked[i].goodPrice);
+                        var _nums = parseInt(_this.checked[i].salesVolume);
+                        tmp += _price * _nums;
+                    }
+                    // console.log(tmp);
+                    return tmp;
+                },
+
+                totalNums: function () {
+                    var tmp = 0, _this = this;
+                    if (_this.checked.length <= 0) {
+                        return 0;
+                    }
+                    for (var i = 0; i < _this.checked.length; i++) {
+                        var _nums = parseInt(_this.checked[i].salesVolume);
+                        tmp += _nums;
+                    }
+                    return tmp;
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
