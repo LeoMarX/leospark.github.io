@@ -1,0 +1,646 @@
+@charset "UTF-8";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.4rem;
+	font-family: "PingFang SC", "Microsoft YaHei", Arial, helvetica, sans-serif;
+	background-color: #EEE;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+/* RESET CSS */
+h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li, 
+form, fieldset, legend, button, input, textarea, 
+th, td {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* wrapper */
+#wrapper {
+	width: 100%;
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* 顶栏部分 */
+.top-box {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	max-width: 60rem;
+	height: 4.5rem;
+}
+
+.top-bar {
+	position: relative;
+	max-width: 58rem;
+	height: 100%;
+	padding: 0 1rem;
+	background-color: #FAFAFA;
+	/*box-shadow: 1px 0 1px #EEE;*/
+	border-bottom: solid 1px #EEE;
+}
+
+.top-bar a, #top-menu i {
+	display: inline-block;
+	background-image: url(../images/yanxuan_spirite.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.menu-btn {
+	width: 3rem;
+	height: 2.5rem;
+	margin: 1rem auto 1rem;
+	background-size: 9rem auto;
+	background-position: 0.1rem -13.4rem;
+}
+
+.clear-menu {
+	background-position: 0.1rem -16.4rem;
+	animation: toggleMenu .8s ease-in;
+	opacity: 1;
+}
+
+@keyframes toggleMenu {
+	0% {opacity: .2;}
+	100% {opacity: 1;}
+}
+
+/* 切换关闭按钮 */
+.menu-close {
+	background-size: 9rem auto;
+	background-position: 0.2rem -16.5rem;
+}
+
+
+.top-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 10rem;
+	height: 2.5rem;
+	margin: auto;
+	background-size: 9rem auto;
+	background-position: center -10rem;
+}
+
+.search-btn {
+	position: absolute;
+	right: 0;
+	width: 3rem;
+	height: 2.5rem;
+	margin: 1rem 5rem 1rem 0;
+	background-size: 9rem auto;
+	background-position: -0.5rem -30.5rem;
+}
+
+.shopping-btn {
+	float: right;
+	right: 0;
+	width: 3rem;
+	height: 2.5rem;
+	margin: 1rem auto;
+	background-size: 9rem auto;
+	background-position: -0.4rem -0.5rem;
+	background-color: #FAFAFA;
+}
+
+/* 隐藏式菜单 */
+#top-menu {
+	position: relative;
+	z-index: -10;
+	display: block;
+	width: 100%;
+	max-width: 60rem;
+	padding: .5rem 0 1rem;
+	background-color: #FAFAFA;
+	font-size: 1.2rem;
+	color: #555;
+}
+
+.hidden {
+	top: -7rem;
+}
+
+.menu-hidden {
+	top: -7rem;
+	opacity: 0;
+	animation: menu-hidden .3s ease;
+}
+
+.menu-show {
+	top: 0;
+	opacity: 1;
+	animation: menu-display .3s ease;
+}
+
+/* 菜单切换动画 */
+@keyframes menu-display {
+	0% { top: -7rem; opacity: 0; }
+	100% { top: 0; opacity: 1; }
+}
+
+@keyframes menu-hidden {
+	0% { top: 0; opacity: 1; }
+	100% { top: -7rem; opacity: 0; }
+}
+
+#top-menu ul {
+	padding: 0 4%;
+	overflow: hidden;
+}
+
+#top-menu li {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+#top-menu a {
+	display: block;
+}
+
+#top-menu i {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	margin: 0 auto;
+}
+
+.menu-index {
+	background-size: 9rem auto;
+	background-position: 0.2rem -6.5rem;	
+}
+
+.menu-topic {
+	background-size: 9rem auto;
+	background-position: 0.2rem -33.5rem;
+}
+
+.menu-category {
+	background-size: 9rem auto;
+	background-position: 0.2rem -3.5rem;
+}
+
+.menu-personal {
+	background-size: 9rem auto;
+	background-position: 0.2rem -26.6rem;
+}
+
+/* 轮播窗口 */
+.slider-box {
+	position: relative;
+	width: 100%;
+	margin-top: 4.5rem;
+	background-color: #FFF;
+	overflow: hidden;
+}
+
+.slider-content {
+	width: 600%; /* 5个子方块，复制第1个方块到第6个 */
+	max-height: 33.6rem;
+	max-height: 56vw; /* 高度为设备宽度的 9/16 */
+	font-size: 0;
+	overflow: hidden;
+}
+
+.slider-content li {
+	float: left;
+	display: inline-block;
+	width: 16.6%; /* 1/6 = 0.1666... */
+	width: 100vw;
+	max-width: 60rem;
+	height: 100%;
+	font-size: 0;
+	letter-spacing: -4px;
+	word-spacing: -4px;
+}
+
+.slider-content img {
+	display: block;
+	width: 100%;
+}
+
+.swipe-wrap {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	display: block;
+	margin-left: -7.5rem; /* 自身宽度一半，居中定位 */
+	font-size: 0;
+}
+
+.swipe-wrap li {
+	display: inline-block;
+	width: 2.2rem;
+	height: .2rem;
+	margin: 0 .2rem;
+	background-color: rgba(256, 256, 256, .6);
+	cursor: pointer;
+}
+
+.swipe-wrap .selected-white {
+	background-color: #FFF;
+	/*background-color: red;*/
+}
+
+/* 热点提示 */
+.hot-tip {
+	display: block;
+	height: 4rem;
+	border-bottom: solid 1px #EEE;
+	line-height: 4rem;
+	color: #555;
+	background-color: #FEFEFE;
+}
+
+.hot-tip img {
+	height: 2.6rem;
+	margin: .7rem 1.5rem;
+}
+
+.hot-tip span{
+	position: relative;
+	display: inline-block;
+	padding-left: 1rem;
+	margin: 1rem 0;
+	border-left: solid 1px #E6E6E6;
+	vertical-align: top;
+	line-height: 2rem;
+}
+
+/* 分类栏 */
+.type-list {
+	display: block;
+	padding: 2rem;
+	margin-bottom: 1rem;
+	color: #555;
+	background-color: #FFF;
+}
+
+.type-list ul {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	font-size: 0; /* 清楚子元素多余空间 */
+}
+
+.type-list li {
+	float: left;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.type-list img {
+	display: block;
+	width: 3rem;
+	margin: 0 auto .2rem;
+}
+
+/* 产品列表 */
+.floor-list,
+.new-items {
+	position: relative;
+	display: block;
+	margin-bottom: 1rem;
+	background-color: #FFF;
+	color: #555;
+	overflow: hidden;
+}
+
+.floor-list header,
+.new-items header,
+.special-topic header {
+	height: 6rem;
+	line-height: 6rem;
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.floor-list img {
+	width: 100%;
+}
+
+.floor-list > .col-1 {
+	position: relative;
+	float: left;
+	width: 50%;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+
+.floor-list > .col-1 .list-alltype {
+	left: 1rem;
+}
+
+.floor-list > .col-1:before {
+	content: "";
+	position: absolute;
+	top: -1px;
+	z-index: 2;
+	display: block;
+	height: 1px;
+	width: 100%;
+	background-color: #EEE;
+}
+
+.floor-list > .col-1:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -1px;
+	z-index: 2;
+	display: block;
+	height: 120%;
+	width: 1px;
+	background-color: #EEE;
+}
+
+.floor-list .more {
+	display: block;
+	width: 100%;
+	height: 10rem;
+	margin-top: 50%;
+	font-size: 1.6rem;
+}
+
+.list-more {
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	margin: 2rem auto 0;
+	background-image: url(../images/more-link.png);
+	background-size: cover;
+}
+
+.list-name {
+	display: block;
+	padding: .2rem 1rem;
+	color: #404040;
+	font-size: 1.5rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.list-price {
+	display: block;
+	padding: .5rem 0;
+	color: #b4282d;
+	font-size: 1.6rem;
+}
+
+.list-tip, 
+.list-intro,
+.list-alltype {
+	display: block;
+	padding: .5rem 0;
+	color: #A0A0A0;
+	font-size: 1.4rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.list-alltype {
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	padding: .5rem 0;
+	color: #B4A078;
+	font-size: 1.2rem;
+	line-height: 1.3;
+	-webkit-writing-mode: vertical-rl; /* 垂直排版 */
+	writing-mode: vertical-rl;
+	letter-spacing: .1rem;
+	transform: scale(0.9);
+	border: solid 1px #B4A078;
+}
+
+.list-alltype::first-letter {
+	position: absolute;
+	top: 10px;
+	display: block;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.floor-list .col-1:nth-child(even) {
+	clear: left; /* 清除偶数格子浮动 */
+}
+
+/* 横向样式 */
+.floor-list .row-2 {
+	position: relative;
+	height: 14rem;
+	margin: 0 2rem;
+	border-top: solid 1px #EEE;
+}
+
+.floor-list .row-2 img {
+	float: left;
+	width: auto;
+	height: 100%;
+}
+
+.floor-list .row-2 .list-name {
+	padding: 2rem 0 0;
+}
+
+.floor-list .row-2 .list-intro {
+	font-size: 1.3rem;
+}
+
+.floor-list .row-2 .list-price {
+	font-size: 1.6rem;
+	font-weight: 500;
+	padding: 0;
+}
+
+/* 制造商 */
+.Manufacturers {
+	position: relative;
+	width: 100%;
+	height: 67vw;
+	max-height: 40.2rem;
+	-webkit-overflow: hidden;
+	overflow: hidden;
+}
+
+.Manufacturers .col-1 {
+	position: relative;
+	margin-right: 50%;
+	width: 50%;
+	height: 50%;
+}
+
+.Manufacturers .col-1 img {
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+
+.Manufacturers .col-2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+}
+
+.Manufacturers .cont {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding: 1.5rem;
+}
+
+.Manufacturers .cont h4 {
+	color: #404040;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+.Manufacturers .cont span {
+	color: #A0A0A0;
+	font-size: 1.3rem;
+	font-weight: normal;
+}
+
+/* 新品栏 */
+.new-items .col-1 {
+	float: left;
+	width: 50%;
+	padding-bottom: 1.5rem;
+	text-align: center;
+}
+
+.new-items img {
+	width: 100%;
+}
+
+/* 专题栏 */
+.special-topic {
+	padding: 0 4% 2rem; /* 设备宽度 92% */
+	background-color: #FFF;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}
+
+.special-topic ul {
+	width: 312.5%; /* 设备宽度 x 92% x 312.5% */
+	overflow: hidden;
+	margin-left: 0;
+}
+
+.list-scroll-item {
+	float: left;
+	display: block;
+	width: 32%; /* ≈设备宽度 92% */
+	height: 100%;
+	margin-right: 1%;  /* ≈设备宽度 3% */
+	/*border: solid red 1px;*/
+}
+
+.list-scroll-item > a {
+	display: block;
+	width: 100%;
+	height: 56vw;
+	max-height: 33.6rem;
+	border-radius: .5rem;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}
+
+.list-scroll-item a > img {
+	height: 100%;
+}
+
+.list-scroll-item .list-name {
+	display: inline-block;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.list-scroll-item .list-price {
+	display: inline-block;
+	font-size: 1.5rem;
+	padding-left: 1rem;
+	color: #b4282d;
+}
+
+.list-scroll-item .list-intro {
+	padding: 0;
+	font-size: 1.2rem;
+}
+
+.footer {
+	/*position: fixed;*/
+	/*bottom: 0;*/
+	/*width: 100%;*/
+	/*z-index: 10;*/
+	margin-top: 2rem;
+	padding: 3rem 1rem 2rem;
+	background-color: #414141;
+	text-align: center;
+	color: #999;
+	font-size: 1.2rem;
+}
+
+.footer-link {
+	display: inline-block;
+	width: 8.8rem;
+	height: 3.2rem;
+	margin-bottom: 1.5rem;
+	color: #FFF;
+	line-height: 3.2rem;
+	border-radius: .2rem;
+	box-shadow: 0 0 .2rem 0 #EEE;
+}
+
+.footer .footer-link:first-child {
+	margin-right: 2.2rem;
+}
+
+.goTop-btn {
+	position: fixed;
+	right: 1rem;
+	bottom: 4rem;
+	z-index: 10;
+	width: 4rem;
+	height: 4rem;
+	background-image: url(../images/goTop-btn.png);
+	background-size: cover;
+}
