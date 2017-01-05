@@ -2,6 +2,13 @@
 
 html {
 	font-size: 62.5%;
+	font-size: calc(100vw/37.5);
+}
+
+@media only screen and (min-width: 420px) {
+	html {
+		font-size: 12px !important;
+	}
 }
 
 body {
@@ -28,6 +35,10 @@ ul, ol {
 	list-style: none;
 }
 
+img {
+	border: 0;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -40,7 +51,7 @@ a:hover {
 /* wrapper */
 #wrapper {
 	width: 100%;
-	max-width: 60rem;
+	max-width: 50rem;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -51,7 +62,7 @@ a:hover {
 	top: 0;
 	z-index: 10;
 	width: 100%;
-	max-width: 60rem;
+	max-width: 50rem;
 	height: 4.5rem;
 }
 
@@ -138,7 +149,7 @@ a:hover {
 	z-index: -10;
 	display: block;
 	width: 100%;
-	max-width: 60rem;
+	max-width: 50rem;
 	padding: .5rem 0 1rem;
 	background-color: #FAFAFA;
 	font-size: 1.2rem;
@@ -225,8 +236,8 @@ a:hover {
 
 .slider-content {
 	width: 600%; /* 5个子方块，复制第1个方块到第6个 */
-	max-height: 33.6rem;
-	max-height: 56vw; /* 高度为设备宽度的 9/16 */
+	height: 56vw; /* 高度为设备宽度的 9/16 */
+	max-height: 28rem;
 	font-size: 0;
 	overflow: hidden;
 }
@@ -236,7 +247,7 @@ a:hover {
 	display: inline-block;
 	width: 16.6%; /* 1/6 = 0.1666... */
 	width: 100vw;
-	max-width: 60rem;
+	max-width: 50rem;
 	height: 100%;
 	font-size: 0;
 	letter-spacing: -4px;
@@ -279,27 +290,28 @@ a:hover {
 	line-height: 4rem;
 	color: #555;
 	background-color: #FEFEFE;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .hot-tip img {
 	height: 2.6rem;
-	margin: .7rem 1.5rem;
+	padding: .7rem 0 0 .5rem;
 }
 
 .hot-tip span{
 	position: relative;
-	display: inline-block;
-	padding-left: 1rem;
+	display: inline;
+	padding-left: 2%;
 	margin: 1rem 0;
 	border-left: solid 1px #E6E6E6;
 	vertical-align: top;
-	line-height: 2rem;
 }
 
 /* 分类栏 */
 .type-list {
 	display: block;
-	padding: 2rem;
+	padding: 2rem 0;
 	margin-bottom: 1rem;
 	color: #555;
 	background-color: #FFF;
@@ -343,7 +355,7 @@ a:hover {
 	height: 6rem;
 	line-height: 6rem;
 	text-align: center;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 }
 
 .floor-list img {
@@ -439,21 +451,23 @@ a:hover {
 	color: #B4A078;
 	font-size: 1.2rem;
 	line-height: 1.3;
+	text-align: center;
+	-ms-writing-mode: tb-rl;
 	-webkit-writing-mode: vertical-rl; /* 垂直排版 */
 	writing-mode: vertical-rl;
 	letter-spacing: .1rem;
 	transform: scale(0.9);
-	border: solid 1px #B4A078;
+	border: solid .1rem #B4A078;
 }
 
-.list-alltype::first-letter {
-	position: absolute;
-	top: 10px;
-	display: block;
+.list-alltype > .num {
+	display: inline-block;
+	vertical-align: top;
+	height: 1.5rem;
+	-ms-transform: rotate(-90deg);
 	-webkit-transform: rotate(-90deg);
-	-moz-transform: rotate(-90deg);
 	transform: rotate(-90deg);
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	/*text-combine-upright: all;*/
 }
 
 .floor-list .col-1:nth-child(even) {
@@ -493,7 +507,7 @@ a:hover {
 	position: relative;
 	width: 100%;
 	height: 67vw;
-	max-height: 40.2rem;
+	max-height: 33.5rem;
 	-webkit-overflow: hidden;
 	overflow: hidden;
 }
@@ -578,7 +592,7 @@ a:hover {
 	display: block;
 	width: 100%;
 	height: 56vw;
-	max-height: 33.6rem;
+	max-height: 28rem;
 	border-radius: .5rem;
 	overflow: hidden;
 	margin-bottom: 1rem;

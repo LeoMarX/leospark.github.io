@@ -248,3 +248,13 @@ window.addEventListener("scroll", function() {
         goTopBtn.style.display = "none";
     }
 });
+
+// 暂时取消 a 标签跳转
+(function() {
+    document.addEventListener("click", function(e) {
+        var event = e || window.event;
+        if(event.target && event.target.nodeName.toUpperCase() == "A"){
+            event.preventDefault();
+        }
+    })
+})();
