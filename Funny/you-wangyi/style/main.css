@@ -62,18 +62,18 @@ a:hover {
 	top: 0;
 	z-index: 10;
 	width: 100%;
-	max-width: 50rem;
 	height: 4.5rem;
+	background-color: #FAFAFA;
 }
 
 .top-bar {
 	position: relative;
-	max-width: 58rem;
+	max-width: 50rem;
 	height: 100%;
+	margin: auto;
 	padding: 0 1rem;
-	background-color: #FAFAFA;
-	/*box-shadow: 1px 0 1px #EEE;*/
 	border-bottom: solid 1px #EEE;
+	background-color: #FAFAFA;
 }
 
 .top-bar a, #top-menu i {
@@ -149,11 +149,15 @@ a:hover {
 	z-index: -10;
 	display: block;
 	width: 100%;
-	max-width: 50rem;
 	padding: .5rem 0 1rem;
-	background-color: #FAFAFA;
 	font-size: 1.2rem;
 	color: #555;
+	background-color: #FAFAFA;
+}
+
+#top-menu > ul {
+	margin: auto;
+	max-width: 50rem;
 }
 
 .hidden {
