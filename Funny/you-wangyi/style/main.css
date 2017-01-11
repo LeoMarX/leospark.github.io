@@ -436,8 +436,7 @@ a:hover {
 }
 
 .list-tip, 
-.list-intro,
-.list-alltype {
+.list-intro {
 	display: block;
 	padding: .5rem 0;
 	color: #A0A0A0;
@@ -451,27 +450,15 @@ a:hover {
 	position: absolute;
 	top: 1rem;
 	left: 0;
-	padding: .5rem 0;
+	display: block;
+	padding: .5rem .2rem;
+	width: 1.2rem;
 	color: #B4A078;
 	font-size: 1.2rem;
-	line-height: 1.3;
 	text-align: center;
-	-ms-writing-mode: tb-rl;
-	-webkit-writing-mode: vertical-rl; /* 垂直排版 */
-	writing-mode: vertical-rl;
-	letter-spacing: .1rem;
-	transform: scale(0.9);
+	line-height: 1;
 	border: solid .1rem #B4A078;
-}
-
-.list-alltype > .num {
-	display: inline-block;
-	vertical-align: top;
-	height: 1.5rem;
-	-ms-transform: rotate(-90deg);
-	-webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-	/*text-combine-upright: all;*/
+	transform: scale(0.85);
 }
 
 .floor-list .col-1:nth-child(even) {
