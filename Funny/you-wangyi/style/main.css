@@ -16,10 +16,10 @@ body {
 	padding: 0;
 	font-size: 1.4rem;
 	font-family: "PingFang SC", "Microsoft YaHei", Arial, helvetica, sans-serif;
-	background-color: #EEE;
+	background-color: #F4F4F4;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;	
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* RESET CSS */
@@ -68,6 +68,7 @@ a:hover {
 
 .top-bar {
 	position: relative;
+	z-index: 10;
 	max-width: 50rem;
 	height: 100%;
 	margin: auto;
@@ -146,7 +147,6 @@ a:hover {
 /* 隐藏式菜单 */
 #top-menu {
 	position: relative;
-	z-index: -10;
 	display: block;
 	width: 100%;
 	padding: .5rem 0 1rem;
@@ -161,30 +161,33 @@ a:hover {
 }
 
 .hidden {
+	z-index: -10;
 	top: -7rem;
 }
 
 .menu-hidden {
 	top: -7rem;
 	opacity: 0;
+	z-index: 1;
 	animation: menu-hidden .3s ease;
 }
 
 .menu-show {
 	top: 0;
 	opacity: 1;
-	animation: menu-display .3s ease;
+	z-index: 10;
+	animation: menu-display .2s ease;
 }
 
 /* 菜单切换动画 */
 @keyframes menu-display {
-	0% { top: -7rem; opacity: 0; }
+	0% { top: -4rem; opacity: 0; }
 	100% { top: 0; opacity: 1; }
 }
 
 @keyframes menu-hidden {
 	0% { top: 0; opacity: 1; }
-	100% { top: -7rem; opacity: 0; }
+	100% { top: -7rem; opacity: 0.2; }
 }
 
 #top-menu ul {
@@ -229,6 +232,163 @@ a:hover {
 	background-position: 0.2rem -26.6rem;
 }
 
+/* 分类列表导航 */
+.cateNav {
+	position: absolute;
+	top: 4.5rem;
+	width: 94%;
+    padding: 0 3%;
+	background-color: #FAFAFA;
+	overflow: hidden;
+}
+
+.cateNav:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 3rem;
+    height: 4.5rem;
+    background: -prefix-linear-gradient(right, #FFF, rgba(256, 256, 256, .6) 70%, transparent);
+    background: linear-gradient(to right, #FFF, rgba(256, 256, 256, .6) 70%, transparent);
+}
+
+.cateNav:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 3rem;
+    height: 4.5rem;
+    background: -prefix-linear-gradient(left, #FFF, rgba(256, 256, 256, .6) 70%, transparent);
+    background: linear-gradient(to left, #FFF,  rgba(256, 256, 256, .6) 70%, transparent);
+}
+
+.cateNav > ul {
+	position: relative;
+	width: 160%;
+	max-width: 90rem;
+	height: 4.5rem;
+	margin: 0 auto;
+	transform: translate3d(0px, 0, 0);
+}
+
+.cateNav li {
+    position: relative;
+	float: left;
+	display: block;
+    width: 11.1%;
+	max-width: 10rem;
+    line-height: 4.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.cateNav li > a {
+	font-size: inherit;
+	line-height: 4.5rem;
+	vertical-align: top;
+}
+
+.cateNav-selected {
+    color: #ab2b2b;
+}
+
+.cateNav-selected:before {
+    content:"";
+    position: absolute;
+	z-index: 1;
+	left: 50%;
+    bottom: 0;
+    display: block;
+    width: 70%;
+    height: .3rem;
+    margin: 0 auto;
+    background-color: #ab2b2b;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+}
+
+.cate-banner {
+	position: relative;
+	width: 100%;
+	height: 15rem;
+	height: 40vw;
+	max-height: 20rem;
+	margin-top: 9rem;
+	overflow: hidden;
+}
+
+.cate-banner:before {
+	content:"";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .2);
+}
+
+.cate-banner img {
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	display: block;
+	height: 100%;
+	margin: 0 auto;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+}
+
+.cate-banner p {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+	color: #FFF;
+	line-height: 1.5;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.cate-banner p:before {
+	content: "";
+	position: relative;
+	z-index: 1;
+	top: 3rem;
+	display: block;
+	width: 8rem;
+	height: .1rem;
+	margin: 0 auto;
+	background-color: rgba(256, 256, 256, .8);
+	box-shadow: 0 0 1px #FFF;
+}
+
+.cate-FloatHeader {
+	padding: .5rem 0;
+	background-color: #F4F4F4;
+}
+
+.cate-FloatHeader h2 {
+	color: #333;
+	font-size: 1.6rem;
+	font-weight: normal;
+	line-height: 2;
+}
+
+.cate-FloatHeader p {
+	color: #999;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
 /* 轮播窗口 */
 .slider-box {
 	position: relative;
@@ -248,7 +408,7 @@ a:hover {
 
 .slider-content li {
 	float: left;
-	display: inline-block;
+	display: block;
 	width: 16.6%; /* 1/6 = 0.1666... */
 	width: 100vw;
 	max-width: 50rem;
@@ -325,12 +485,12 @@ a:hover {
 	display: block;
 	width: 100%;
 	overflow: hidden;
-	font-size: 0; /* 清楚子元素多余空间 */
+	font-size: 0; /* 清除子元素多余空间 */
 }
 
 .type-list li {
 	float: left;
-	display: inline-block;
+	display: block;
 	width: 20%;
 	text-align: center;
 	font-size: 1.2rem;
@@ -372,6 +532,7 @@ a:hover {
 	width: 50%;
 	padding-bottom: 1.5rem;
 	text-align: center;
+	background-color: #FFF;
 }
 
 .floor-list > .col-1 .list-alltype {
@@ -384,7 +545,7 @@ a:hover {
 	top: -1px;
 	z-index: 2;
 	display: block;
-	height: 1px;
+	height: .1rem;
 	width: 100%;
 	background-color: #EEE;
 }
@@ -397,7 +558,7 @@ a:hover {
 	z-index: 2;
 	display: block;
 	height: 120%;
-	width: 1px;
+	width: .1rem;
 	background-color: #EEE;
 }
 
@@ -471,6 +632,7 @@ a:hover {
 	height: 14rem;
 	margin: 0 2rem;
 	border-top: solid 1px #EEE;
+	background-color: #FFF;
 }
 
 .floor-list .row-2 img {
@@ -550,6 +712,7 @@ a:hover {
 	width: 50%;
 	padding-bottom: 1.5rem;
 	text-align: center;
+	background-color: #FFF;
 }
 
 .new-items img {
