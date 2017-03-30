@@ -9,27 +9,30 @@
 
 <body>
     <div id="top">购物车</div>
-    <div id="del-btn">
-        <img src="./img/delete.svg" onclick="app.clearAll()"></div>
 
     <div id="shopping-box">
-        <!-- 购物列表 -->
+
+        <div id="del-btn">
+            <img src="./img/delete.svg" @click="clearItem">
+        </div>
+
+        <!-- 购物车列表 -->
         <div class="shopping-list" v-for="(item, index) in items">
-            <input type="checkbox" :value="item" v-model="checked">
-            <img :src="item.goodThumb" alt="pic">
+            <input type="checkbox" :value="index" v-model="checked">
+            <img :src="item.goodThumb" :alt="item.goodName">
             <span class="product-name"> {{ item.goodName }} </span>
-            <span class="product-price"> {{ item.goodPrice }} </span>
+            <span class="product-price">{{ item.goodPrice | formatPrice}} </span>
             <div class="num-box">
                 <span>数量：</span>
                 <button class="more" 
-                @click="more(index)">+</button>
+                        @click="changeQuantity(item, 1)">+</button>
                 <span class="piece"> {{ item.salesVolume }} </span>
                 <button class="less"
-                 @click="less(index)">-</button>
+                        @click="changeQuantity(item, -1)">-</button>
             </div>
         </div>
 
-        <!-- 计算总价 -->
+        <!-- 计算总价、数量 -->
         <div id="calculate">
             <input type="checkbox" id="select-all" v-model="allChecked">
             <label for="select-all">全选</label>
@@ -48,65 +51,95 @@
 
         var app = new Vue({
             el: "#shopping-box",
+
             data: {
                 items: dataList.data,
+                allPrice: 0,
+                allNums: 0,
                 checked: []
             },
+
+            filters: {
+                // 对“价格”进行格式化
+                formatPrice: function(value) {
+                    return "￥ " + Number(value).toFixed(2);
+                }
+            },
+
             methods: {
-
-                more: function (index) {
-                    this.items[index].salesVolume++;
+                // 对单项商品进行加减
+                changeQuantity: function(product, way) {
+                    if(way > 0) {
+                        product.salesVolume ++;
+                    } else {
+                        product.salesVolume > 1 ? product.salesVolume -- : 1;
+                    };
                 },
+                // 计算总价和总数量
+                calcTotal: function() {
+                    var tmp1 = 0, tmp2 = 0;
+                    
+                    for (var i = 0; i < this.checked.length; i++) {
+                        var pIndex = this.checked[i];
+                        var _price = Number(this.items[pIndex].goodPrice);
+                        var _nums = Number(this.items[pIndex].salesVolume);
+                        tmp1 += _price * _nums;
+                        tmp2 += _nums;
+                    }
 
-                less: function (index) {
-                    this.items[index].salesVolume > 0 ? this.items[index].salesVolume-- : 0;
+                    this.allPrice = tmp1;
+                    this.allNums = tmp2;          
                 },
-
-                clearAll: function () {
-                    this.items = [];
+                // 清除 items 被选中的项，checked 数组为被选中商品的索引
+                clearItem: function () {
+                    var tmpArr = [], _this = this;
+                    this.checked.forEach(function(value, index) {
+                        _this.items[value] = null;
+                    });
+                    this.items.forEach(function(value, index) {
+                        if(value != null) {
+                            tmpArr.push(value);
+                        }
+                    });
+                    this.items = tmpArr;
                     this.checked = [];
                 }
             },
+            
             computed: {
-
                 allChecked: {
+                    // 若所有列表都被选中，则 checkbox 的值为 true，自动选中
                     get: function () {
                         return this.checked.length > 0 && this.checked.length == this.items.length;
                     },
+                    // 参数 value 为 getter 的值，布尔值
                     set: function (value) {
+                        var _this = this;
                         if (value) {
-                            this.checked = this.items;
+                            this.items.forEach(function(value, index) {
+                                _this.checked.splice(index, 1, index);
+                            });       
                         } else {
                             this.checked = [];
                         }
                         console.log("this is allChecked setter.");
                     }
                 },
-
+                // 监听 checked 的值
                 totalPrice: function () {
-                    var tmp = 0, _this = this;
-                    if (_this.checked.length <= 0) {
+                    
+                    if (this.checked.length <= 0) {
                         return 0;
-                    }
-                    for (var i = 0; i < _this.checked.length; i++) {
-                        var _price = parseInt(_this.checked[i].goodPrice);
-                        var _nums = parseInt(_this.checked[i].salesVolume);
-                        tmp += _price * _nums;
-                    }
-                    // console.log(tmp);
-                    return tmp;
+                    };
+                    this.calcTotal();
+                    return this.allPrice;
                 },
-
                 totalNums: function () {
-                    var tmp = 0, _this = this;
-                    if (_this.checked.length <= 0) {
+
+                    if (this.checked.length <= 0) {
                         return 0;
                     }
-                    for (var i = 0; i < _this.checked.length; i++) {
-                        var _nums = parseInt(_this.checked[i].salesVolume);
-                        tmp += _nums;
-                    }
-                    return tmp;
+                    return this.allNums;
                 }
             }
         });
