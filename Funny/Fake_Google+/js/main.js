@@ -41,7 +41,7 @@ function pushNews() {
 	$listContentSpan.html(authors[randomX].content);
 }
 
-function posFloat() {	
+function posFloat() {
 		var $main = $("#main");
 		var $list = $("#main>div");
 		var $ls01 = $list.last();
